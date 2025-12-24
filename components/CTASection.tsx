@@ -11,7 +11,7 @@ export default function CTASection() {
     if (!mounted) return null;
 
     return (
-        <section className="py-24 relative overflow-hidden" id="cta">
+        <section className="py-16 relative overflow-hidden" id="cta">
             {/* Animated Gradient Background - CSS Only */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[size:200%_auto] animate-gradient-shift" style={{ animation: 'gradientShift 10s ease infinite' }} />
 

@@ -5,25 +5,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi"; // Changed to FiChevronDown to match existing imports styling style
 import {
     HiHome,
     HiGlobeAlt,
     HiBriefcase,
     HiAcademicCap,
     HiPhotograph,
-    HiStar,
+    HiInformationCircle,
     HiMail
 } from "react-icons/hi";
+import { services } from "@/lib/data/services";
+import { courses } from "@/lib/data/courses";
 
 // Clean 7-tab navigation with professional icons
 const navLinks = [
     { name: "Home", href: "/", icon: HiHome },
     { name: "Destinations", href: "/destinations", icon: HiGlobeAlt },
     { name: "Services", href: "/services", icon: HiBriefcase },
-    { name: "Programs", href: "/study-programs", icon: HiAcademicCap },
+    { name: "Programs", href: "/programs", icon: HiAcademicCap },
     { name: "Gallery", href: "/gallery", icon: HiPhotograph },
-    { name: "Reviews", href: "/reviews", icon: HiStar },
+    { name: "About Us", href: "/about", icon: HiInformationCircle },
     { name: "Contact", href: "/contact", icon: HiMail },
 ];
 
@@ -62,6 +64,7 @@ export default function Header() {
                                     src="/logo.jpg"
                                     alt="Pinnacle Nepal"
                                     fill
+                                    sizes="100px" // Optimized for small logo
                                     className="object-contain"
                                     priority
                                     quality={100}
@@ -75,8 +78,21 @@ export default function Header() {
                                 const isActive = pathname === link.href;
                                 const Icon = link.icon;
 
-                                // Special handling for Destinations dropdown
-                                if (link.name === "Destinations") {
+                                // Dropdown Handler for Destinations, Services, and Programs
+                                if (["Destinations", "Services", "Programs"].includes(link.name)) {
+                                    let dropdownTitle = "";
+                                    let dropdownContent: any[] = [];
+
+                                    if (link.name === "Destinations") {
+                                        dropdownTitle = "Study Destinations";
+                                    } else if (link.name === "Services") {
+                                        dropdownTitle = "Our Services";
+                                        dropdownContent = services.map(s => ({ name: s.title, href: `/services#${s.id}` }));
+                                    } else if (link.name === "Programs") {
+                                        dropdownTitle = "Academic Programs";
+                                        dropdownContent = courses.map(c => ({ name: c.title, href: `/programs#${c.id}` }));
+                                    }
+
                                     return (
                                         <div key={link.name} className="relative group">
                                             <Link
@@ -91,36 +107,52 @@ export default function Header() {
                                             </Link>
 
                                             {/* Dropdown Menu */}
-                                            <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] border-2 border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
+                                            <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] border-2 border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
                                                 <div className="p-4">
-                                                    <p className="text-xs font-bold text-gray-600 mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">Study Destinations</p>
-                                                    <div className="grid grid-cols-2 gap-2 max-h-96 overflow-y-auto">
-                                                        {[
-                                                            { name: 'USA', id: 'usa' },
-                                                            { name: 'Canada', id: 'canada' },
-                                                            { name: 'India', id: 'india' },
-                                                            { name: 'Australia', id: 'australia' },
-                                                            { name: 'UK', id: 'uk' },
-                                                            { name: 'Europe', id: 'europe' },
-                                                            { name: 'Bangladesh', id: 'bangladesh' },
-                                                            { name: 'China', id: 'china' },
-                                                            { name: 'Malaysia', id: 'malaysia' },
-                                                            { name: 'Turkey', id: 'turkey' },
-                                                            { name: 'Cyprus', id: 'cyprus' },
-                                                            { name: 'Russia', id: 'russia' },
-                                                            { name: 'Kazakhstan', id: 'kazakhstan' },
-                                                            { name: 'Georgia', id: 'georgia' },
-                                                            { name: 'New Zealand', id: 'newzealand' },
-                                                        ].map((country) => (
-                                                            <Link
-                                                                key={country.id}
-                                                                href={`/destinations/${country.id}`}
-                                                                className="px-3 py-2.5 text-sm font-bold text-[#003893] hover:text-white hover:bg-[#DC143C] rounded-lg transition-all duration-200 text-center"
-                                                            >
-                                                                {country.name}
-                                                            </Link>
-                                                        ))}
-                                                    </div>
+                                                    <p className="text-xs font-bold text-gray-600 mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">{dropdownTitle}</p>
+
+                                                    {link.name === "Destinations" ? (
+                                                        <div className="grid grid-cols-2 gap-2 max-h-96 overflow-y-auto custom-scrollbar">
+                                                            {[
+                                                                { name: 'USA', id: 'usa' },
+                                                                { name: 'Canada', id: 'canada' },
+                                                                { name: 'India', id: 'india' },
+                                                                { name: 'Australia', id: 'australia' },
+                                                                { name: 'UK', id: 'uk' },
+                                                                { name: 'Europe', id: 'europe' },
+                                                                { name: 'Bangladesh', id: 'bangladesh' },
+                                                                { name: 'China', id: 'china' },
+                                                                { name: 'Malaysia', id: 'malaysia' },
+                                                                { name: 'Turkey', id: 'turkey' },
+                                                                { name: 'Cyprus', id: 'cyprus' },
+                                                                { name: 'Russia', id: 'russia' },
+                                                                { name: 'Kazakhstan', id: 'kazakhstan' },
+                                                                { name: 'Georgia', id: 'georgia' },
+                                                                { name: 'New Zealand', id: 'newzealand' },
+                                                            ].map((country) => (
+                                                                <Link
+                                                                    key={country.id}
+                                                                    href={`/destinations/${country.id}`}
+                                                                    className="px-3 py-2.5 text-sm font-bold text-[#003893] hover:text-white hover:bg-[#DC143C] rounded-lg transition-all duration-200 text-center"
+                                                                >
+                                                                    {country.name}
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    ) : (
+                                                        <div className="flex flex-col gap-1 max-h-96 overflow-y-auto custom-scrollbar">
+                                                            {dropdownContent.map((item) => (
+                                                                <Link
+                                                                    key={item.href}
+                                                                    href={item.href}
+                                                                    className="px-3 py-2.5 text-sm font-bold text-[#003893] hover:text-white hover:bg-[#DC143C] rounded-lg transition-all duration-200 flex items-center justify-between group/item"
+                                                                >
+                                                                    <span>{item.name}</span>
+                                                                    <span className="opacity-0 group-hover/item:opacity-100 transition-opacity">→</span>
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
@@ -186,7 +218,7 @@ export default function Header() {
                     </div>
 
                     {/* Mobile Nav Links */}
-                    <nav className="flex-1 overflow-y-auto py-6 px-4">
+                    <nav className="flex-1 overflow-y-auto py-6 px-4 custom-scrollbar">
                         {navLinks.map((link) => {
                             const isActive = pathname === link.href;
                             const Icon = link.icon;

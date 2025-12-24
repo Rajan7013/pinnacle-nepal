@@ -1,47 +1,46 @@
 # 🎓 Pinnacle Nepal - Educational Consultancy Platform
 
-A modern, high-performance educational consultancy website built with Next.js 16, featuring stunning animations, responsive design, and optimal SEO.
+A modern, full-featured educational consultancy website built with Next.js 14, featuring stunning animations, form integrations, and a comprehensive destination/program showcase.
 
-![Pinnacle Nepal](public/logo.jpg)
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-ff69b4)
 
-## ✨ Features
+## 🌟 Features
 
-### 🎨 **Design & UI**
-- **Logo-Themed Design** - Professional color scheme matching brand identity
-  - Primary Red: `#DC143C`
-  - Primary Blue: `#003893`
-- **Framer Motion Animations** - Smooth, professional animations throughout
-- **Responsive Design** - Perfect display on all devices (mobile, tablet, desktop)
-- **Hero Carousel** - 13 high-quality images with smooth slide transitions
-- **Glass Morphism Effects** - Modern UI design patterns
+### 🎨 Design & UI
+- **Modern Gradient Design** - Blue and red gradient theme throughout
+- **Smooth Animations** - Powered by Framer Motion
+- **Responsive Layout** - Mobile-first design
+- **Interactive Components** - Hover effects, transitions, and micro-animations
+- **Animated Counters** - Statistics that count up on scroll
+- **Blog-Style Layouts** - Clean, readable content presentation
 
-### 🚀 **Performance**
-- **Next.js 16** with App Router
-- **Turbopack** for ultra-fast builds
-- **Image Optimization** - Automatic WebP conversion and responsive sizing
-- **Edge Caching** - Cloudflare Workers integration ready
-- **SEO Optimized** - Comprehensive meta tags and Open Graph support
+### 📱 Pages
+- **Home** - Hero section, featured destinations, courses, statistics
+- **Destinations** - 15+ countries with detailed information
+  - Individual country pages with universities, courses, and requirements
+  - Top courses section with gradient cards
+- **Services** - Comprehensive consultancy services
+- **Programs** - Study programs and opportunities
+- **Gallery** - Visual showcase
+- **About Us** - Company story, values, milestones, team
+- **Contact** - Multi-field contact form with validation
 
-### 📱 **Pages & Sections**
-- **Home** - Dynamic hero section, services, testimonials, contact form
-- **Destinations** - Study abroad opportunities (USA, UK, Canada, Australia, etc.)
-- **Services** - Complete consultancy services
-- **Programs** - Available study programs
-- **Gallery** - Photo showcase
-- **Reviews** - Student success stories and testimonials
-- **Contact** - Interactive contact form with validation
+### 🔧 Integrations
+- **Google Sheets** - Form submissions automatically saved
+- **Email Notifications** - Gmail alerts for new submissions
+- **WhatsApp** - Floating chat button with pre-filled messages
+- **Consultation Popup** - Timed popup for lead generation
 
-### 🛠️ **Tech Stack**
-- **Framework:** Next.js 16.1.0
-- **UI:** React 19.2.3, Tailwind CSS 4
-- **Animations:** Framer Motion 12.23
-- **Icons:** React Icons, Heroicons, Lucide React
-- **Forms:** React Hook Form + Zod validation
-- **Database:** Supabase (PostgreSQL)
-- **ORM:** Drizzle ORM
-- **Deployment:** Vercel / Cloudflare
+### 📊 Data Management
+- **15+ Destinations** - USA, UK, Canada, Australia, Germany, and more
+- **500+ Universities** - Comprehensive university database
+- **Multiple Courses** - Engineering, Business, Medicine, Arts, etc.
+- **Dynamic Content** - All data managed through centralized files
 
-## 🎯 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -52,8 +51,8 @@ A modern, high-performance educational consultancy website built with Next.js 16
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/pinnacle-nepal.git
-cd pinnacle-nepal
+git clone https://github.com/yourusername/consultancy-platform.git
+cd consultancy-platform
 ```
 
 2. **Install dependencies**
@@ -62,141 +61,287 @@ npm install
 ```
 
 3. **Set up environment variables**
-Create a `.env.local` file in the root directory:
-```env
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-# Cloudflare (optional)
-CLOUDFLARE_ACCOUNT_ID=your_account_id
-CLOUDFLARE_DATABASE_ID=your_database_id
-CLOUDFLARE_API_TOKEN=your_api_token
+Create a `.env.local` file in the root directory:
+
+```env
+# Google Sheets Integration
+NEXT_PUBLIC_GOOGLE_SHEETS_URL=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
+
+# WhatsApp Integration
+NEXT_PUBLIC_WHATSAPP_NUMBER=9779801234567
+
+# Admin Email (for reference)
+ADMIN_EMAIL=your-email@gmail.com
 ```
 
-4. **Run development server**
+4. **Run the development server**
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the website.
+5. **Open your browser**
+```
+http://localhost:3000
+```
 
-## 📁 Project Structure
+## 📋 Google Sheets Setup
+
+### Step 1: Create Google Sheet
+1. Go to [Google Sheets](https://sheets.google.com)
+2. Create new spreadsheet: "Pinnacle Nepal - Form Submissions"
+3. Add headers in Row 1:
+   - A1: Timestamp
+   - B1: Name
+   - C1: Email
+   - D1: Phone
+   - E1: Country
+   - F1: Course
+   - G1: Message
+   - H1: Form Type
+
+### Step 2: Create Apps Script
+1. In your sheet: **Extensions** → **Apps Script**
+2. Paste the complete script from `SETUP_COMPLETE.md`
+3. **Replace `your-email@gmail.com` with your actual email**
+4. Save the script
+
+### Step 3: Deploy
+1. Click **Deploy** → **New deployment**
+2. Type: **Web app**
+3. Execute as: **Me**
+4. Who has access: **Anyone**
+5. Click **Deploy**
+6. Copy the Web App URL
+
+### Step 4: Update .env.local
+Paste the Web App URL in your `.env.local` file
+
+### Step 5: Restart Server
+```bash
+# Stop the server (Ctrl+C)
+npm run dev
+```
+
+## 📧 Email Configuration
+
+Emails are sent via Google Apps Script's MailApp. To prevent emails from going to spam:
+
+1. **Mark as Not Spam** - Open spam email and click "Not Spam"
+2. **Create Gmail Filter**:
+   - Settings → Filters → Create new filter
+   - Subject: `Pinnacle Nepal`
+   - Check: "Never send to Spam"
+   - Create filter
+
+## 💬 WhatsApp Setup
+
+1. Update your WhatsApp number in `.env.local`:
+```env
+NEXT_PUBLIC_WHATSAPP_NUMBER=9779801234567
+```
+Format: Country code + number (no spaces, dashes, or +)
+
+2. The floating WhatsApp button will appear on all pages
+3. Clicking opens WhatsApp with pre-filled message
+
+## 🏗️ Project Structure
 
 ```
 consultancy-platform/
-├── app/                    # Next.js App Router pages
-│   ├── page.tsx           # Homepage
-│   ├── layout.tsx         # Root layout
-│   └── globals.css        # Global styles
-├── components/            # React components
-│   ├── Header.tsx         # Navigation bar
-│   ├── HeroSection.tsx    # Hero carousel
-│   ├── Footer.tsx         # Footer
-│   ├── ContactForm.tsx    # Contact form
-│   └── marketing/         # Marketing components
-├── lib/                   # Utilities and helpers
-│   ├── animations.ts      # Framer Motion variants
-│   └── utils.ts           # Utility functions
-├── public/                # Static assets
-│   ├── logo.jpg           # Company logo
-│   └── images/            # Image assets
-│       └── hero/          # Hero section images (hero-1.jpg to hero-13.jpg)
-├── next.config.ts         # Next.js configuration
-├── tailwind.config.ts     # Tailwind CSS configuration
-└── package.json           # Dependencies
+├── app/                      # Next.js 14 App Router
+│   ├── about/               # About Us page
+│   ├── contact/             # Contact page
+│   ├── destinations/        # Destinations pages
+│   │   └── [country]/      # Dynamic country pages
+│   ├── gallery/            # Gallery page
+│   ├── programs/           # Programs page
+│   ├── services/           # Services page
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Home page
+│   └── globals.css         # Global styles
+├── components/              # React components
+│   ├── Header.tsx          # Navigation header
+│   ├── Footer.tsx          # Footer
+│   ├── ContactForm.tsx     # Contact form
+│   ├── ConsultationPopup.tsx # Popup form
+│   ├── WhatsAppButton.tsx  # WhatsApp floating button
+│   └── ...                 # Other components
+├── lib/                     # Utilities and data
+│   ├── data/               # Data files
+│   │   ├── destinations.ts # Countries & universities
+│   │   ├── courses.ts      # Course data
+│   │   └── services.ts     # Services data
+│   └── animations.ts       # Framer Motion configs
+├── public/                  # Static assets
+│   └── images/             # Images
+│       ├── destinations/   # Country images
+│       ├── services/       # Service images
+│       └── courses/        # Course images
+├── .env.local              # Environment variables (create this)
+├── next.config.js          # Next.js configuration
+├── tailwind.config.ts      # Tailwind CSS config
+├── package.json            # Dependencies
+└── README.md               # This file
 ```
 
-## 🎨 Color Palette
+## 🎨 Customization
 
-The design uses official Pinnacle Nepal brand colors:
-
-| Color | Hex Code | Usage |
-|-------|----------|-------|
-| **Primary Red** | `#DC143C` | Active states, CTAs, highlights |
-| **Primary Blue** | `#003893` | Text, inactive states, headers |
-| White | `#FFFFFF` | Backgrounds, text on dark |
-| Dark | `#1A1A1A` | Text, overlays |
-
-## 🖼️ Hero Section
-
-The hero section features a dynamic carousel with:
-- **13 high-quality images** (1920x1080)
-- **2-second intervals** between slides
-- **Right-to-left slide animation**
-- **Dynamic text** that changes per image
-- **Navigation dots** for manual control
-
-### Adding Hero Images
-
-Place images in `public/images/hero/` with names:
-- `hero-1.jpg`
-- `hero-2.jpg`
-- ... up to `hero-13.jpg`
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Required variables for `.env.local`:
-
-```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-
-# Cloudflare (Optional - for edge deployment)
-CLOUDFLARE_ACCOUNT_ID=your-account-id
-CLOUDFLARE_DATABASE_ID=your-database-id
-CLOUDFLARE_API_TOKEN=your-api-token
+### Colors
+Edit `tailwind.config.ts` to change the color scheme:
+```typescript
+colors: {
+  primary: '#003893',    // Blue
+  secondary: '#DC143C',  // Red
+  // Add your colors
+}
 ```
 
-### Next.js Configuration
+### Data
+- **Destinations**: Edit `lib/data/destinations.ts`
+- **Courses**: Edit `lib/data/courses.ts`
+- **Services**: Edit `lib/data/services.ts`
 
-Key features enabled in `next.config.ts`:
-- Turbopack for faster builds
-- Image optimization with quality settings
-- Security headers
-- Cache control for static assets
+### Images
+Place images in `public/images/`:
+- Destinations: `public/images/destinations/`
+- Services: `public/images/services/`
+- Courses: `public/images/courses/`
 
-## 📦 Build & Deployment
-
-### Build for Production
+## 🛠️ Available Scripts
 
 ```bash
+# Development server
+npm run dev
+
+# Production build
 npm run build
+
+# Start production server
 npm start
+
+# Lint code
+npm run lint
+
+# Type check
+npm run type-check
 ```
 
-### Deploy to Vercel
+## 📦 Dependencies
 
-1. Push to GitHub
-2. Import project in Vercel
+### Core
+- **Next.js 14** - React framework
+- **React 18** - UI library
+- **TypeScript** - Type safety
+
+### Styling
+- **Tailwind CSS** - Utility-first CSS
+- **Framer Motion** - Animation library
+
+### Icons
+- **React Icons** - Icon library (HeroIcons)
+
+### Forms
+- **React Hook Form** - Form handling (if used)
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+1. Push code to GitHub
+2. Import project in [Vercel](https://vercel.com)
 3. Add environment variables
 4. Deploy
 
-### Deploy to Cloudflare Pages
+### Other Platforms
+- **Netlify**: Similar to Vercel
+- **AWS Amplify**: AWS hosting
+- **DigitalOcean**: VPS deployment
 
-```bash
-npm run build
-npx wrangler pages deploy out
-```
+**Important**: Add environment variables in your deployment platform!
+
+## 📱 Features Breakdown
+
+### Form Submissions
+- ✅ Contact Form (7 fields)
+- ✅ Consultation Popup (4 fields)
+- ✅ Google Sheets integration
+- ✅ Email notifications
+- ✅ Form validation
+- ✅ Success/error states
+
+### Animations
+- ✅ Page transitions
+- ✅ Scroll animations
+- ✅ Hover effects
+- ✅ Counter animations
+- ✅ Card animations
+- ✅ Timeline animations
+
+### Responsive Design
+- ✅ Mobile (320px+)
+- ✅ Tablet (768px+)
+- ✅ Desktop (1024px+)
+- ✅ Large screens (1440px+)
+
+## 🐛 Troubleshooting
+
+### Forms not submitting to Google Sheets?
+- Check `.env.local` has correct URL
+- Verify script is deployed as "Anyone"
+- Restart dev server after changing `.env.local`
+- See `GOOGLE_SHEETS_DEBUG.md`
+
+### WhatsApp button not working?
+- Check phone number format (no spaces/dashes)
+- Must start with country code
+- Example: `9779801234567`
+
+### Emails going to spam?
+- Mark first email as "Not Spam"
+- Create Gmail filter (see Email Configuration)
+
+### Images not loading?
+- Check file paths are correct
+- Verify images exist in `public/images/`
+- Check Next.js image optimization settings
+
+## 📚 Documentation
+
+- `SETUP_COMPLETE.md` - Quick setup guide
+- `FORM_INTEGRATION_SETUP.md` - Detailed form setup
+- `GOOGLE_SHEETS_DEBUG.md` - Debugging guide
+- `test-google-sheets.html` - Testing tool
 
 ## 🤝 Contributing
 
-This is a private project for Pinnacle Nepal Educational Consultancy.
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
 ## 📄 License
 
-© 2024 Pinnacle Nepal. All rights reserved.
+This project is licensed under the MIT License.
 
-## 📞 Contact
+## 👥 Authors
 
-- **Website:** [Your Website URL]
-- **Email:** [Your Email]
-- **Phone:** [Your Phone]
-- **Address:** [Your Address]
+**Pinnacle Nepal Team**
+- Website: [pinnacle-nepal.com](#)
+- Email: info@pinnacle-nepal.com
+- WhatsApp: +977 980 123 4567
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- Framer Motion for smooth animations
+- Tailwind CSS for utility-first styling
+- Google Apps Script for form handling
+
+## 📞 Support
+
+For support, email info@pinnacle-nepal.com or message us on WhatsApp.
 
 ---
 
-**Built with ❤️ by Pinnacle Nepal Team**
+**Built with ❤️ by Pinnacle Nepal**

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -104,16 +103,12 @@ const CountryCard = ({ country, index }: { country: any; index: number }) => {
     const [imageError, setImageError] = useState(false);
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-            className="group relative cursor-pointer touch-manipulation transform-gpu transition-all duration-300 hover:scale-105"
+        <div
+            className="group relative cursor-pointer touch-manipulation tap-highlight-transparent"
         >
             {/* Full Image Card */}
             <Link href="/destinations">
-                <div className="relative aspect-[4/3] rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div className="relative aspect-[4/3] rounded-2xl shadow-lg overflow-hidden bg-white transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl">
                     {/* Background Image */}
                     {!imageError ? (
                         <Image
@@ -152,7 +147,7 @@ const CountryCard = ({ country, index }: { country: any; index: number }) => {
                     </div>
                 </div>
             </Link>
-        </motion.div>
+        </div>
     );
 };
 
@@ -162,16 +157,12 @@ export default function DestinationsSection() {
     if (!mounted) return null;
 
     return (
-        <section className="py-24 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden" id="countries">
+        <section className="py-16 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden" id="countries">
             {/* Static Background Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
             <div className="container mx-auto px-4 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.6 }}
+                <div
                     className="text-center mb-16"
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/50 rounded-full mb-4 text-blue-700 font-bold text-xs uppercase tracking-wider">
@@ -185,7 +176,7 @@ export default function DestinationsSection() {
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                         Unlock world-class education with our partner institutions across the globe.
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {countries.map((country, index) => (

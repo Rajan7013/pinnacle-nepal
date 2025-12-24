@@ -19,6 +19,7 @@ const studyDestinations = [
     { name: "UK", href: "/destinations?country=uk" },
     { name: "Canada", href: "/destinations?country=canada" },
     { name: "Australia", href: "/destinations?country=australia" },
+    { name: "Europe", href: "/destinations?country=europe" },
 ];
 
 const socialLinks = [

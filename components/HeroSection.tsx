@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import TalkToExpertButton from "./TalkToExpertButton";
 
 const TOTAL_HERO_IMAGES = 13;
 const IMAGE_CHANGE_INTERVAL = 2000; // 2 seconds
@@ -64,8 +65,8 @@ export default function HeroSection() {
             </AnimatePresence>
 
             {/* Text - Bottom positioned, fully responsive */}
-            <div className="relative z-10 w-full pb-12 sm:pb-14 md:pb-16 lg:pb-20">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 w-full pb-12 sm:pb-14 md:pb-16 lg:pb-12">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <AnimatePresence mode="wait">
                         <motion.h1
                             key={currentImageIndex}
@@ -78,6 +79,9 @@ export default function HeroSection() {
                             {currentTitle}
                         </motion.h1>
                     </AnimatePresence>
+
+                    {/* Talk to Expert Button - Bottom Right of Content */}
+                    <TalkToExpertButton className="hidden md:block absolute right-0 bottom-0 translate-y-full md:translate-y-1/2" />
                 </div>
             </div>
 
@@ -88,8 +92,8 @@ export default function HeroSection() {
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
                         className={`transition-all duration-300 ${index === currentImageIndex
-                                ? "bg-[#E75F41] w-6 sm:w-8 h-1.5 sm:h-2"
-                                : "bg-white/50 hover:bg-white/80 w-1.5 sm:w-2 h-1.5 sm:h-2"
+                            ? "bg-[#E75F41] w-6 sm:w-8 h-1.5 sm:h-2"
+                            : "bg-white/50 hover:bg-white/80 w-1.5 sm:w-2 h-1.5 sm:h-2"
                             } rounded-full`}
                         aria-label={`Go to slide ${index + 1}`}
                     />

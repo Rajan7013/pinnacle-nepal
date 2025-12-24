@@ -1,0 +1,13 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+ <g opacity="0.5" fill="#FFFFFF">
+  <path d="M150,100 Q200,50 250,100 T350,100 T450,100" />
+  <circle cx="200" cy="150" r="20" />
+  <circle cx="600" cy="200" r="30" />
+  <path d="M50,200 Q100,250 150,200 T250,200" />
+  <rect x="500" y="100" width="100" height="60" rx="10" />
+  <rect x="650" y="250" width="80" height="40" rx="5" />
+  <!-- Minimal abstract representation of world continents for background -->
+  <path d="M50,100 q20,-20 40,0 t40,0 t40,0" stroke="white" fill="none" stroke-width="2"/>
+  <path d="M600,100 q20,-20 40,0 t40,0 t40,0" stroke="white" fill="none" stroke-width="2"/>
+ </g>
+</svg>

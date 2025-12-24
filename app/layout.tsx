@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ConsultationPopup from "@/components/ConsultationPopup";
+import TalkToExpertButton from "@/components/TalkToExpertButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Pinnacle Nepal - Educational Consultancy",
@@ -32,6 +35,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="antialiased">
+        <ConsultationPopup />
+        <WhatsAppButton />
         {children}
       </body>
     </html>

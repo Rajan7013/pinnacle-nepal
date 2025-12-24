@@ -60,8 +60,9 @@ export default function WhyChooseUsSection() {
                             Why Us?
                         </div>
                         <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-                            We Don't Just Guide, <br />
-                            <span className="text-[#003893]">We Build Careers.</span>
+                            <span className="text-gray-900">We Don't Just </span>
+                            <span className="text-[#003893]">Guide, We Build </span>
+                            <span className="text-[#DC143C]">Careers.</span>
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                             At Pinnacle Nepal, we believe in a personalized approach. Your dreams are unique, and our strategy for you needs to be too.

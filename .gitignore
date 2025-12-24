@@ -48,7 +48,7 @@ next-env.d.ts
 *.sql
 
 # Python scripts and virtual environments
-*.py
+# *.py
 __pycache__/
 *.pyc
 venv/
@@ -68,3 +68,11 @@ wrangler.toml
 # IDE
 .vscode/
 .idea/
+
+# Add to .gitignore
+.env.local
+node_modules/
+.next/
+out/
+.DS_Store
+*.log

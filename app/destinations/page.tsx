@@ -6,10 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { destinationsData, topCourses } from "@/lib/data/destinations";
+import { destinationsData } from "@/lib/data/destinations";
 import { HiX, HiAcademicCap, HiGlobeAlt } from "react-icons/hi";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CoursesSection from "@/components/CoursesSection";
+import TalkToExpertButton from "@/components/TalkToExpertButton";
 
 function DestinationsContent() {
     const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
@@ -49,13 +51,17 @@ function DestinationsContent() {
                         <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold mb-6 border border-white/30">
                             <span className="text-white">🌍 15 Countries • 50+ Universities</span>
                         </div>
-                        <h1 className="text-5xl md:text-6xl font-black mb-6 text-white leading-tight">
-                            Study Destinations
+                        <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
+                            <span className="text-white">Study </span>
+                            <span className="text-white/90">Destinations</span>
                         </h1>
                         <p className="text-xl text-white/90 leading-relaxed">
                             Explore our partner universities across the globe and find your perfect study destination
                         </p>
                     </motion.div>
+
+                    {/* Talk to Expert Button */}
+                    <TalkToExpertButton className="hidden md:block absolute right-4 bottom-0 translate-y-1/2" />
                 </div>
             </section>
 
@@ -69,7 +75,8 @@ function DestinationsContent() {
                         className="text-center mb-12"
                     >
                         <h2 className="text-4xl font-black mb-4">
-                            <span className="text-gray-900">Choose Your </span>
+                            <span className="text-gray-900">Choose </span>
+                            <span className="text-[#003893]">Your </span>
                             <span className="text-[#DC143C]">Destination</span>
                         </h2>
                         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -142,91 +149,7 @@ function DestinationsContent() {
             </section>
 
             {/* Top Courses Section */}
-            <section className="py-20 relative overflow-hidden">
-                {/* Animated Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,56,147,0.1),transparent)] opacity-50" />
-                <div className="container mx-auto px-4 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <div className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-bold mb-4 border border-blue-200 shadow-lg">
-                            <span className="bg-gradient-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent">Popular Programs</span>
-                        </div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-4">
-                            <span className="text-gray-900">Top Courses </span>
-                            <span className="bg-gradient-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent">Offered</span>
-                        </h2>
-                        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                            Explore diverse programs across all our partner universities
-                        </p>
-                    </motion.div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-                        {topCourses.map((course, index) => {
-                            const gradients = [
-                                'from-blue-500 via-blue-600 to-purple-600',
-                                'from-orange-500 via-red-500 to-pink-600',
-                                'from-green-500 via-teal-500 to-cyan-600',
-                                'from-red-500 via-pink-500 to-rose-600',
-                                'from-indigo-500 via-purple-500 to-pink-600',
-                                'from-yellow-500 via-orange-500 to-red-600',
-                                'from-cyan-500 via-blue-500 to-indigo-600',
-                                'from-purple-500 via-fuchsia-500 to-pink-600',
-                            ];
-
-                            return (
-                                <motion.div
-                                    key={course.category}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    whileHover={{ y: -10, scale: 1.03 }}
-                                    className="group relative h-full"
-                                >
-                                    <div className={`relative bg-gradient-to-br ${gradients[index]} rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden h-full flex flex-col`}>
-                                        <div className="absolute inset-0 bg-black/20" />
-                                        <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
-
-                                        <div className="relative z-10 flex flex-col h-full">
-                                            <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl">
-                                                {course.icon}
-                                            </div>
-                                            <h3 className="text-xl font-black mb-4 drop-shadow-lg">
-                                                {course.category.split(' ').length === 1 ? (
-                                                    <span className="text-[#003893]">{course.category}</span>
-                                                ) : course.category.split(' ').length === 2 ? (
-                                                    <>
-                                                        <span className="text-[#003893]">{course.category.split(' ')[0]} </span>
-                                                        <span className="text-[#DC143C]">{course.category.split(' ')[1]}</span>
-                                                    </>
-                                                ) : (
-                                                    <span className="text-white">{course.category}</span>
-                                                )}
-                                            </h3>
-                                            <ul className="space-y-2.5 flex-grow">
-                                                {course.specializations.map((spec) => (
-                                                    <li key={spec} className="text-white text-base flex items-start gap-2 drop-shadow-lg">
-                                                        <span className="text-white font-bold mt-0.5 text-lg">•</span>
-                                                        <span className="font-bold leading-snug">{spec}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-bl-full" />
-                                        <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-tr-full" />
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
+            <CoursesSection />
 
             {/* University Modal */}
             {selectedCountry && country && (
