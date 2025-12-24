@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[39576,["/Pinnacle-Nepal/_next/static/chunks/24776e9c674318c7.js","/Pinnacle-Nepal/_next/static/chunks/bb3efb43b44e8bc0.js"],"default"]
 3:I[45486,["/Pinnacle-Nepal/_next/static/chunks/24776e9c674318c7.js","/Pinnacle-Nepal/_next/static/chunks/bb3efb43b44e8bc0.js"],"default"]
-0:{"buildId":"s9FM2jhnzIFXHv5aY1KgW","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"2RLkDR1-qbbkHmDv7z9cb","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
