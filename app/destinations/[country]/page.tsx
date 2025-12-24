@@ -4,6 +4,13 @@ import CountryContent from "@/components/CountryContent";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+// Generate static params for all countries
+export async function generateStaticParams() {
+    return destinationsData.map((country) => ({
+        country: country.id,
+    }));
+}
+
 interface CountryPageProps {
     params: Promise<{
         country: string;

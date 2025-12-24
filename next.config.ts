@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
   },
   // Set basePath for GitHub Pages (replace 'your-repo-name' with actual repo name)
   basePath: process.env.NODE_ENV === 'production' ? '/Pinnacle-Nepal' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/pinnacle-nepal/' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Pinnacle-Nepal/' : '',
 };
 
 export default nextConfig;
