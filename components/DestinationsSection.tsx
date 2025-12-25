@@ -138,7 +138,7 @@ const CountryCard = ({ country, index }: { country: any; index: number }) => {
                     {/* Flag Image - Bottom Right */}
                     <div className="absolute bottom-6 right-6 w-16 h-16 rounded-full bg-white shadow-lg overflow-hidden border-4 border-white z-10">
                         <Image
-                            src={`/images/flags/${country.id}.png`}
+                            src={`/images/flags/${country.id}.jpg`}
                             alt={`${country.name} flag`}
                             fill
                             className="object-cover"
