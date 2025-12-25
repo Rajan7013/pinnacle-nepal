@@ -6,10 +6,7 @@
     "dev": "set NODE_OPTIONS=--max-old-space-size=4096 && next dev",
     "build": "set NODE_OPTIONS=--max-old-space-size=4096 && next build",
     "start": "next start",
-    "lint": "eslint",
-    "export": "next build",
-    "predeploy": "npm run export && type nul > out\\.nojekyll",
-    "deploy": "npm run predeploy && npx gh-pages -d out -b gh-pages"
+    "lint": "eslint"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
