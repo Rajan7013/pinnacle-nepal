@@ -6,7 +6,7 @@ export default function HeroBackground() {
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Tech Grid Overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-10 opacity-20"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] z-10 opacity-20"></div>
 
             {/* Aurora Blobs */}
             <div className="absolute inset-0 bg-black">
@@ -57,7 +57,7 @@ export default function HeroBackground() {
             </div>
 
             {/* Vignette to blend edges */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black z-20"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-black z-20"></div>
         </div>
     );
 }

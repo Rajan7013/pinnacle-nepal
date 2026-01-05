@@ -107,7 +107,7 @@ export default function Header() {
                                             </Link>
 
                                             {/* Dropdown Menu */}
-                                            <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] border-2 border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999]">
+                                            <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] border-2 border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                                 <div className="p-4">
                                                     <p className="text-xs font-bold text-gray-600 mb-3 uppercase tracking-wide border-b border-gray-200 pb-2">{dropdownTitle}</p>
 
@@ -206,8 +206,18 @@ export default function Header() {
             >
                 <div className="flex flex-col h-full">
                     {/* Mobile Header */}
-                    <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-[#003893]">
-                        <span className="text-xl font-bold text-white">Menu</span>
+                    <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-[#003893]">
+                        <div className="relative h-16 w-32">
+                            <Image
+                                src="/logo.jpg"
+                                alt="Pinnacle Nepal"
+                                fill
+                                sizes="128px"
+                                className="object-contain"
+                                priority
+                                quality={100}
+                            />
+                        </div>
                         <button
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="w-10 h-10 rounded bg-[#DC143C] text-white flex items-center justify-center hover:bg-[#B01030] transition-colors"

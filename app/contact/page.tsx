@@ -13,7 +13,7 @@ export default function ContactPage() {
             <Header />
             <main className="min-h-screen bg-white pt-24">
                 {/* Hero Section */}
-                <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden">
+                <section className="relative pt-32 pb-20 bg-linear-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)] opacity-50" />
                     <div className="absolute inset-0 bg-[url('/images/world-map.svg')] opacity-10 bg-center bg-no-repeat bg-cover" />
 
@@ -54,7 +54,7 @@ export default function ContactPage() {
                                 <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-blue-600 mb-4 shadow-sm">
                                     <HiLocationMarker className="text-2xl" />
                                 </div>
-                                <h3 className="font-bold text-blue-900 mb-2">Visit Class</h3>
+                                <p className="font-bold text-blue-900 mb-2 text-lg">Visit Class</p>
                                 <p className="text-blue-600 text-sm font-medium">
                                     Pinnacle Nepal, Kathmandu, Nepal<br />
                                     Thamel, Ward No. 26

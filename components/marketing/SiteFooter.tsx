@@ -23,7 +23,7 @@ export default function SiteFooter() {
 
                     {/* Links */}
                     <div>
-                        <h4 className="font-bold mb-4 text-pinnacle-orange">Quick Links</h4>
+                        <h3 className="font-bold mb-4 text-pinnacle-orange">Quick Links</h3>
                         <ul className="space-y-2 text-sm text-slate-300">
                             <li><a href="#" className="hover:text-white">About Us</a></li>
                             <li><a href="#" className="hover:text-white">Services</a></li>

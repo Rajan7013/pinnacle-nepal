@@ -110,7 +110,7 @@ export default function HeroDisplay() {
                         sizes="100vw"
                     />
                     {/* Clean Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
                 </motion.div>
             </AnimatePresence>
 
@@ -162,21 +162,26 @@ export default function HeroDisplay() {
 
             {/* Slide Indicators */}
             <div className="absolute bottom-10 right-10 flex gap-2 z-20">
-                {SLIDES.map((slide, idx) => (
+                {SLIDES.map((_, idx) => (
                     <button
-                        key={slide.id}
+                        key={idx}
                         onClick={() => setCurrent(idx)}
-                        className={`transition-all duration-300 rounded-full shadow-sm ${current === idx
-                            ? 'bg-pinnacle-orange w-8 h-2'
-                            : 'bg-white/50 w-2 h-2 hover:bg-white'
-                            }`}
+                        className={`transition-all duration-300 p-2 ${idx === current
+                            ? "bg-white/30"
+                            : "bg-transparent"
+                            } rounded-full min-w-[48px] min-h-[48px] flex items-center justify-center`}
                         aria-label={`Go to slide ${idx + 1}`}
-                    />
+                    >
+                        <span className={`block ${idx === current
+                            ? "bg-white w-6 h-2"
+                            : "bg-white/50 hover:bg-white/80 w-2 h-2"
+                            } rounded-full transition-all`} />
+                    </button>
                 ))}
             </div>
 
             {/* Decorative Bottom Bar */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pinnacle-orange to-red-600 z-20"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-pinnacle-orange to-red-600 z-20"></div>
         </section>
     );
 }

@@ -10,10 +10,10 @@ import TalkToExpertButton from "@/components/TalkToExpertButton";
 import { useEffect, useState, useRef } from "react";
 
 const stats = [
-    { label: "Students Placed", value: 10000, suffix: "+", icon: HiUserGroup },
-    { label: "Partner Universities", value: 500, suffix: "+", icon: HiAcademicCap },
-    { label: "Countries", value: 15, suffix: "+", icon: HiGlobeAlt },
-    { label: "Success Rate", value: 98, suffix: "%", icon: HiTrendingUp },
+    { label: "Years Experience", value: 10, suffix: "+", icon: HiTrendingUp },
+    { label: "Students Placed", value: 3000, suffix: "+", icon: HiUserGroup },
+    { label: "Top Colleges", value: 100, suffix: "+", icon: HiAcademicCap },
+    { label: "Visa Success", value: 0, suffix: "High", icon: HiCheckCircle },
 ];
 
 const values = [
@@ -48,20 +48,25 @@ const values = [
 ];
 
 const milestones = [
-    { year: "2010", event: "Founded with a vision to transform international education", icon: "🚀" },
-    { year: "2015", event: "Expanded to 10+ countries with 100+ partner universities", icon: "🌍" },
-    { year: "2018", event: "Reached milestone of 5,000 successful student placements", icon: "🎓" },
-    { year: "2020", event: "Launched AI-powered university matching system", icon: "🤖" },
-    { year: "2023", event: "Celebrated 10,000+ students studying abroad", icon: "🎉" },
+    { year: "2016", event: "Founded with a vision to transform international education", icon: "🚀" },
+    { year: "2018", event: "Expanded to 10+ countries with 100+ partner universities", icon: "🌍" },
+    { year: "2020", event: "Reached milestone of 5,000 successful student placements", icon: "🎓" },
+    { year: "2022", event: "Launched AI-powered university matching system", icon: "🤖" },
+    { year: "2024", event: "Celebrated 10,000+ students studying abroad", icon: "🎉" },
 ];
 
 function AnimatedCounter({ end, suffix = "", duration = 2 }: { end: number; suffix?: string; duration?: number }) {
     const [count, setCount] = useState(0);
+    const [mounted, setMounted] = useState(false);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
     useEffect(() => {
-        if (!isInView) return;
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isInView || !mounted) return;
 
         let startTime: number;
         let animationFrame: number;
@@ -79,7 +84,12 @@ function AnimatedCounter({ end, suffix = "", duration = 2 }: { end: number; suff
 
         animationFrame = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(animationFrame);
-    }, [isInView, end, duration]);
+    }, [isInView, end, duration, mounted]);
+
+    // If value is 0, just show the suffix text (for "High" visa success)
+    if (end === 0) {
+        return <span ref={ref}>{suffix}</span>;
+    }
 
     return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
@@ -88,8 +98,8 @@ export default function AboutPage() {
     return (
         <>
             <Header />
-            <main className="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
-                <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden">
+            <main className="bg-linear-to-br from-gray-50 via-blue-50 to-purple-50 overflow-hidden">
+                <section className="relative pt-32 pb-20 bg-linear-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)] opacity-50" />
                     <div className="absolute inset-0 bg-[url('/images/world-map.svg')] opacity-10 bg-center bg-no-repeat bg-cover" />
 
@@ -105,7 +115,7 @@ export default function AboutPage() {
                                 animate={{ scale: [1, 1.05, 1] }}
                                 transition={{ duration: 2, repeat: Infinity }}
                             >
-                                <span className="text-white">🌟 Your Trusted Education Partner Since 2010</span>
+                                <span className="text-white">🌟 Your Trusted Education Partner Since 2016</span>
                             </motion.div>
                             <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
                                 <span className="text-white">About </span>
@@ -136,13 +146,13 @@ export default function AboutPage() {
                                         className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-100"
                                     >
                                         <motion.div
-                                            className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mb-4"
+                                            className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-blue-500 to-purple-600 rounded-full mb-4"
                                             animate={{ rotate: [0, 360] }}
                                             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                         >
                                             <Icon className="text-3xl text-white" />
                                         </motion.div>
-                                        <h3 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-2">
+                                        <h3 className="text-3xl md:text-4xl font-black bg-linear-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-2">
                                             <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                                         </h3>
                                         <p className="text-gray-600 font-semibold text-sm">{stat.label}</p>
@@ -161,7 +171,7 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
-                                className="bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 shadow-xl border border-blue-100"
+                                className="bg-linear-to-br from-white to-blue-50 rounded-3xl p-8 shadow-xl border border-blue-100"
                             >
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
@@ -169,11 +179,11 @@ export default function AboutPage() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.2 }}
                                 >
-                                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
+                                    <div className="inline-flex items-center gap-2 bg-linear-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
                                         <HiSparkles className="text-lg" />
                                         Our Story
                                     </div>
-                                    <h2 className="text-4xl font-black bg-gradient-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-6">
+                                    <h2 className="text-4xl font-black bg-linear-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-6">
                                         Transforming Dreams Into Reality
                                     </h2>
                                     <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -198,21 +208,21 @@ export default function AboutPage() {
                                 className="relative h-96 rounded-3xl overflow-hidden shadow-2xl group"
                             >
                                 <motion.div
-                                    className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 z-10"
+                                    className="absolute inset-0 bg-linear-to-br from-blue-500/20 to-purple-600/20 z-10"
                                     whileHover={{ opacity: 0 }}
                                     transition={{ duration: 0.3 }}
                                 />
                                 <motion.div
-                                    whileHover={{ scale: 1.1 }}
+                                    whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.6 }}
-                                    className="w-full h-full"
+                                    className="relative w-full h-full"
                                 >
                                     <Image
                                         src="/images/about-story.jpg"
                                         alt="Our Story"
                                         fill
-                                        className="object-cover"
                                         sizes="(max-width: 768px) 100vw, 50vw"
+                                        className="object-cover"
                                     />
                                 </motion.div>
                             </motion.div>
@@ -228,11 +238,11 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             className="text-center mb-16"
                         >
-                            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                            <div className="inline-flex items-center gap-2 bg-linear-to-r from-purple-500 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
                                 <HiSparkles className="text-lg" />
                                 What Drives Us
                             </div>
-                            <h2 className="text-4xl font-black bg-gradient-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-4">
+                            <h2 className="text-4xl font-black bg-linear-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-4">
                                 Our Core Values
                             </h2>
                             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -251,10 +261,10 @@ export default function AboutPage() {
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1, type: "spring" }}
                                         whileHover={{ y: -10, rotateY: 5 }}
-                                        className={`bg-gradient-to-br ${value.bgGradient} rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 backdrop-blur-sm`}
+                                        className={`bg-linear-to-br ${value.bgGradient} rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 backdrop-blur-sm`}
                                     >
                                         <motion.div
-                                            className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-xl mb-4 shadow-lg`}
+                                            className={`inline-flex items-center justify-center w-16 h-16 bg-linear-to-br ${value.gradient} rounded-xl mb-4 shadow-lg`}
                                             animate={{
                                                 boxShadow: [
                                                     "0 10px 30px rgba(0,0,0,0.1)",
@@ -283,11 +293,11 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             className="text-center mb-16"
                         >
-                            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                            <div className="inline-flex items-center gap-2 bg-linear-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
                                 <HiSparkles className="text-lg" />
                                 Our Journey
                             </div>
-                            <h2 className="text-4xl font-black bg-gradient-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-4">
+                            <h2 className="text-4xl font-black bg-linear-to-r from-[#003893] to-[#DC143C] bg-clip-text text-transparent mb-4">
                                 Milestones That Matter
                             </h2>
                             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -296,7 +306,7 @@ export default function AboutPage() {
                         </motion.div>
 
                         <div className="max-w-4xl mx-auto relative">
-                            <div className="absolute left-[3.5rem] top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block" />
+                            <div className="absolute left-14 top-0 bottom-0 w-1 bg-linear-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block" />
 
                             {milestones.map((milestone, index) => (
                                 <motion.div
@@ -307,9 +317,9 @@ export default function AboutPage() {
                                     transition={{ delay: index * 0.15, type: "spring" }}
                                     className="flex items-center gap-8 mb-12 last:mb-0 relative"
                                 >
-                                    <div className="flex-shrink-0 w-24 text-right">
+                                    <div className="shrink-0 w-24 text-right">
                                         <motion.span
-                                            className="text-2xl font-black bg-gradient-to-r from-[#DC143C] to-purple-600 bg-clip-text text-transparent"
+                                            className="text-2xl font-black bg-linear-to-r from-[#DC143C] to-purple-600 bg-clip-text text-transparent"
                                             whileHover={{ scale: 1.1 }}
                                         >
                                             {milestone.year}
@@ -317,7 +327,7 @@ export default function AboutPage() {
                                     </div>
 
                                     <motion.div
-                                        className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full relative flex items-center justify-center text-2xl shadow-lg z-10"
+                                        className="shrink-0 w-12 h-12 bg-linear-to-br from-blue-500 to-purple-600 rounded-full relative flex items-center justify-center text-2xl shadow-lg z-10"
                                         whileHover={{ scale: 1.2, rotate: 360 }}
                                         transition={{ type: "spring" }}
                                     >
@@ -330,7 +340,7 @@ export default function AboutPage() {
                                     </motion.div>
 
                                     <motion.div
-                                        className="flex-1 bg-gradient-to-br from-white to-purple-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-purple-100"
+                                        className="flex-1 bg-linear-to-br from-white to-purple-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-purple-100"
                                         whileHover={{ x: 10 }}
                                     >
                                         <p className="text-gray-700 font-semibold">{milestone.event}</p>
@@ -341,7 +351,7 @@ export default function AboutPage() {
                     </div>
                 </SectionWrapper>
 
-                <section className="py-20 bg-gradient-to-br from-[#003893] via-[#0052CC] to-[#DC143C] relative overflow-hidden">
+                <section className="py-20 bg-linear-to-br from-[#003893] via-[#0052CC] to-[#DC143C] relative overflow-hidden">
                     <div className="absolute inset-0 bg-[url('/images/world-map.svg')] opacity-10 bg-center bg-no-repeat bg-cover" />
 
                     <div className="container mx-auto px-4 text-center relative z-10">

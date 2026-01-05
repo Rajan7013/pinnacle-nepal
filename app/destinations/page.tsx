@@ -35,9 +35,9 @@ function DestinationsContent() {
     const country = destinationsData.find((c) => c.id === selectedCountry);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
+        <div className="min-h-screen bg-linear-to-b from-gray-50 via-white to-gray-50">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden">
+            <section className="relative pt-32 pb-20 bg-linear-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)] opacity-50" />
                 <div className="absolute inset-0 bg-[url('/images/world-map.svg')] opacity-10 bg-center bg-no-repeat bg-cover" />
 
@@ -97,7 +97,7 @@ function DestinationsContent() {
                                     transition={{ duration: 0.5, delay: index * 0.05 }}
                                     whileHover={{ y: -10, scale: 1.02 }}
                                     // onClick={() => setSelectedCountry(country.id)} // Removed
-                                    className="relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgba(220,20,60,0.2),0_0_40px_rgba(0,56,147,0.15)] transition-all duration-500 group"
+                                    className="relative aspect-4/3 rounded-2xl overflow-hidden cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgba(220,20,60,0.2),0_0_40px_rgba(0,56,147,0.15)] transition-all duration-500 group"
                                 >
                                     {/* Background Image */}
                                     <Image
@@ -109,7 +109,7 @@ function DestinationsContent() {
                                     />
 
                                     {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 
                                     {/* Flag Badge */}
                                     <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-lg z-10">
@@ -161,7 +161,7 @@ function DestinationsContent() {
                         className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl my-8"
                     >
                         {/* Modal Header */}
-                        <div className="relative h-48 bg-gradient-to-br from-[#003893] to-[#DC143C]">
+                        <div className="relative h-48 bg-linear-to-br from-[#003893] to-[#DC143C]">
                             <Image
                                 src={country.image}
                                 alt={country.name}
@@ -169,7 +169,7 @@ function DestinationsContent() {
                                 className="object-cover opacity-30"
                                 sizes="(max-width: 1200px) 100vw, 1200px"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
 
                             <button
                                 onClick={() => setSelectedCountry(null)}
@@ -212,10 +212,10 @@ function DestinationsContent() {
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: index * 0.05 }}
-                                                className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100 hover:border-[#003893] transition-all duration-300"
+                                                className="bg-linear-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100 hover:border-[#003893] transition-all duration-300"
                                             >
                                                 <div className="flex items-start gap-3">
-                                                    <HiAcademicCap className="w-5 h-5 text-[#DC143C] mt-1 flex-shrink-0" />
+                                                    <HiAcademicCap className="w-5 h-5 text-[#DC143C] mt-1 shrink-0" />
                                                     <p className="text-gray-800 font-semibold leading-tight">{university.name}</p>
                                                 </div>
                                             </motion.div>
@@ -229,7 +229,7 @@ function DestinationsContent() {
                                     <p className="text-gray-600 mb-6">
                                         We have established partnerships with leading universities in {country.name}.
                                     </p>
-                                    <button className="bg-gradient-to-r from-[#003893] to-[#0052CC] text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition-all duration-300">
+                                    <button className="bg-linear-to-r from-[#003893] to-[#0052CC] text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition-all duration-300">
                                         Contact Us for Details
                                     </button>
                                 </div>

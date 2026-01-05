@@ -38,7 +38,7 @@ const itemVariants: Variants = {
 
 export default function UniversitiesDisplay({ data }: UniversitiesDisplayProps) {
     return (
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+        <section className="py-24 bg-linear-to-b from-slate-50 to-white overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export default function UniversitiesDisplay({ data }: UniversitiesDisplayProps) 
                                         />
                                     );
                                 })()}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/50">
                                     Rank #{uni.ranking}
                                 </div>
@@ -93,7 +93,7 @@ export default function UniversitiesDisplay({ data }: UniversitiesDisplayProps) 
                                     </span>
                                 </div>
                             </div>
-                            <div className="p-8 flex flex-col flex-grow">
+                            <div className="p-8 flex flex-col grow">
                                 <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-pinnacle-orange transition-colors font-heading leading-tight">
                                     {uni.name}
                                 </h3>

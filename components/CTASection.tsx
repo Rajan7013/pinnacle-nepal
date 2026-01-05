@@ -11,12 +11,13 @@ export default function CTASection() {
     if (!mounted) return null;
 
     return (
-        <section className="py-16 relative overflow-hidden" id="cta">
+        <section className="py-10 relative overflow-hidden" id="cta">
             {/* Animated Gradient Background - CSS Only */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-[size:200%_auto] animate-gradient-shift" style={{ animation: 'gradientShift 10s ease infinite' }} />
+            {/* Animated Gradient Background - Optimized for GPU */}
+            <div className="absolute inset-0 w-[200%] animate-gradient-x bg-linear-to-r from-blue-600 via-purple-600 to-blue-600 will-change-transform" />
 
             {/* Overlay Patterns */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:32px_32px] opacity-20" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[32px_32px] opacity-20" />
 
             <div className="container mx-auto px-4 relative z-10 text-center">
                 <motion.div
@@ -42,7 +43,7 @@ export default function CTASection() {
                                     <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
                                 </span>
                                 {/* Button Shine Effect */}
-                                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-blue-100/30 to-transparent z-0" />
+                                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-linear-to-r from-transparent via-blue-100/30 to-transparent z-0" />
                             </button>
                         </Link>
 

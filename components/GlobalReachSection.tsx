@@ -136,7 +136,7 @@ export default function GlobalReachSection() {
     if (!mounted) return null;
 
     return (
-        <section className="py-8 bg-gradient-to-r from-[#DC143C] to-red-600">
+        <section className="py-8 bg-linear-to-r from-[#DC143C] to-red-600">
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
                     {stats.map((stat, index) => (

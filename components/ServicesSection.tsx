@@ -61,14 +61,14 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
                         sizes="(max-width: 768px) 100vw, 300px"
                     />
                 ) : (
-                    <div className={`w-full h-full bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                    <div className={`w-full h-full bg-linear-to-br ${service.gradient} flex items-center justify-center`}>
                         <Icon className="text-5xl text-white" />
                     </div>
                 )}
             </div>
 
             {/* Service Title */}
-            <div className="p-3 bg-gradient-to-r from-blue-50 to-cyan-50">
+            <div className="p-3 bg-linear-to-r from-blue-50 to-cyan-50">
                 <h3 className="text-xs font-bold text-gray-800 text-center leading-snug">
                     {service.title}
                 </h3>
@@ -83,8 +83,8 @@ export default function ServicesSection() {
     if (!mounted) return null;
 
     return (
-        <section className="py-14 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30 mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />
+        <section className="py-10 bg-linear-to-b from-white via-gray-50 to-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] opacity-30 mask-image:linear-gradient(to_bottom,transparent,black,transparent)" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div
@@ -113,10 +113,12 @@ export default function ServicesSection() {
                     className="text-center"
                 >
                     <Link href="/services">
-                        <button className="group relative px-8 py-3 bg-[#DC143C] text-white font-bold text-base rounded-full shadow-lg">
+                        <button className="group relative px-8 py-4 bg-linear-to-r from-[#003893] to-[#0052CC] text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                             <span className="relative z-10 flex items-center gap-2">
                                 View All Services
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
                             </span>
                         </button>
                     </Link>

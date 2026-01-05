@@ -10,9 +10,9 @@ export default function StatsSection() {
     if (!mounted) return null;
 
     return (
-        <section className="py-12 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        <section className="py-10 bg-linear-to-b from-white via-gray-50 to-white relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30" />
+            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] opacity-30" />
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Centered Heading */}

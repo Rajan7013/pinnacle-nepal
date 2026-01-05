@@ -44,7 +44,7 @@ const ServiceIconLarge = ({ service }: { service: any }) => {
     const [imageError, setImageError] = useState(false);
 
     return (
-        <div className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-lg relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
+        <div className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center shadow-lg relative overflow-hidden group-hover:scale-105 transition-transform duration-500`}>
             {/* Pulse Ring */}
             <div className={`absolute inset-0 bg-white/20 animate-pulse`} />
 
@@ -90,14 +90,14 @@ const ServiceCard = ({ service }: { service: any }) => {
                         sizes="(max-width: 768px) 100vw, 300px"
                     />
                 ) : (
-                    <div className={`w-full h-full bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                    <div className={`w-full h-full bg-linear-to-br ${service.gradient} flex items-center justify-center`}>
                         <Icon className="text-5xl text-white" />
                     </div>
                 )}
             </div>
 
             {/* Service Title */}
-            <div className="p-3 bg-gradient-to-r from-blue-50 to-cyan-50">
+            <div className="p-3 bg-linear-to-r from-blue-50 to-cyan-50">
                 <h3 className="text-xs font-bold text-gray-800 text-center leading-snug">
                     {service.title}
                 </h3>
@@ -113,7 +113,7 @@ export default function ServicesPage() {
 
             <main className="bg-gray-50 overflow-hidden">
                 {/* Hero Section */}
-                <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden mb-16">
+                <section className="relative pt-32 pb-20 bg-linear-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden mb-16">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)] opacity-50" />
                     <div className="absolute inset-0 bg-[url('/images/world-map.svg')] opacity-10 bg-center bg-no-repeat bg-cover" />
 

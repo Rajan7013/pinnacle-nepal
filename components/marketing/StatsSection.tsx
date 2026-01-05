@@ -36,7 +36,7 @@ function Counter({ from, to, suffix }: { from: number; to: number; suffix: strin
 
 export default function StatsSection() {
     return (
-        <section className="py-24 border-y border-white/10 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden relative">
+        <section className="py-24 border-y border-white/10 bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden relative">
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -50,9 +50,9 @@ export default function StatsSection() {
                             transition={{ delay: index * 0.1 }}
                             className="text-center group"
                         >
-                            <h4 className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight group-hover:text-pinnacle-orange transition-colors duration-300">
+                            <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight group-hover:text-pinnacle-orange transition-colors duration-300">
                                 <Counter from={0} to={stat.value} suffix={stat.suffix} />
-                            </h4>
+                            </h3>
                             <p className="text-gray-400 font-medium uppercase tracking-wider text-sm group-hover:text-white transition-colors duration-300">
                                 {stat.label}
                             </p>

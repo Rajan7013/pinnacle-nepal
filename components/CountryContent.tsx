@@ -62,6 +62,7 @@ export default function CountryContent({ country }: CountryContentProps) {
                             src={country.flag}
                             alt={`${country.name} flag`}
                             fill
+                            sizes="(max-width: 768px) 100vw, 400px"
                             className="object-cover"
                         />
                     </motion.div>
@@ -161,7 +162,7 @@ export default function CountryContent({ country }: CountryContentProps) {
                         <div className="space-y-6 max-w-4xl mx-auto">
                             {country.process_detailed.map((step, idx) => (
                                 <div key={idx} className="flex gap-6 items-start p-6 bg-white rounded-xl border border-gray-100 shadow-sm">
-                                    <div className="flex-shrink-0 w-12 h-12 bg-[#DC143C] text-white rounded-full flex items-center justify-center font-bold text-xl">
+                                    <div className="shrink-0 w-12 h-12 bg-[#DC143C] text-white rounded-full flex items-center justify-center font-bold text-xl">
                                         {idx + 1}
                                     </div>
                                     <div>
@@ -228,13 +229,13 @@ export default function CountryContent({ country }: CountryContentProps) {
                                             className="bg-blue-50 rounded-xl p-4 shadow-md hover:shadow-xl border border-blue-100 transition-all duration-300 flex flex-col h-full group"
                                         >
                                             <div className="mb-3">
-                                                <h4 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-3 leading-tight min-h-[3rem]">
+                                                <h3 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-3 leading-tight min-h-12">
                                                     {uni.name}
-                                                </h4>
-                                                <div className="w-8 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mt-2 rounded-full" />
+                                                </h3>
+                                                <div className="w-8 h-1 bg-linear-to-r from-blue-400 to-purple-400 mt-2 rounded-full" />
                                             </div>
 
-                                            <div className="flex-grow">
+                                            <div className="grow">
                                                 <h4 className="text-sm font-bold text-[#DC143C] uppercase tracking-wider mb-3">Popular Courses</h4>
                                                 {uni.courses && uni.courses.length > 0 ? (
                                                     <ul className="space-y-2 mb-6">

@@ -28,7 +28,7 @@ export default function AnimatedCard({
     const variantClasses = {
         default: "bg-white shadow-lg hover-glow",
         glass: "glass-strong",
-        gradient: "bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/20",
+        gradient: "bg-linear-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/20",
     };
 
     const animationProps = {

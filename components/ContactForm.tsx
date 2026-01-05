@@ -162,6 +162,7 @@ export default function ContactForm() {
             return (
                 <div className={`relative ${colSpan} mb-4`} ref={openDropdown === name ? dropdownRef : null}>
                     <label
+                        htmlFor={name}
                         className={`absolute left-10 transition-all duration-200 pointer-events-none z-20 font-medium ${isFocused || hasValue
                             ? "-top-2.5 text-xs bg-white px-2 text-[#003893]"
                             : "top-3.5 text-gray-500 text-sm whitespace-nowrap"
@@ -183,6 +184,7 @@ export default function ContactForm() {
                         {isManualInputAllowed && type === "text" ? (
                             <input
                                 type="text"
+                                id={name}
                                 name={name}
                                 value={value}
                                 onChange={(e) => {
@@ -242,6 +244,7 @@ export default function ContactForm() {
         return (
             <div className={`relative ${colSpan} mb-4`}>
                 <label
+                    htmlFor={name}
                     className={`absolute left-10 transition-all duration-200 pointer-events-none z-20 font-medium ${isFocused || hasValue
                         ? "-top-2.5 text-xs bg-white px-2 text-[#003893]"
                         : "top-3.5 text-gray-500 text-sm whitespace-nowrap"
@@ -257,6 +260,7 @@ export default function ContactForm() {
 
                 {type === "textarea" ? (
                     <textarea
+                        id={name}
                         name={name}
                         value={value}
                         onChange={handleChange}
@@ -270,6 +274,7 @@ export default function ContactForm() {
                 ) : (
                     <input
                         type={type}
+                        id={name}
                         name={name}
                         value={value}
                         onChange={handleChange}
@@ -297,7 +302,7 @@ export default function ContactForm() {
                 <div>
                     <div className="flex items-center gap-3 mb-6 border-b-2 border-gray-100 pb-2">
                         <span className="w-8 h-8 rounded-full bg-[#003893] text-white flex items-center justify-center font-bold text-sm">1</span>
-                        <h4 className="text-lg font-bold text-[#003893] uppercase tracking-wide">Personal Details</h4>
+                        <h3 className="text-lg font-bold text-[#003893] uppercase tracking-wide">Personal Details</h3>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -316,7 +321,7 @@ export default function ContactForm() {
                 <div>
                     <div className="flex items-center gap-3 mb-6 border-b-2 border-gray-100 pb-2">
                         <span className="w-8 h-8 rounded-full bg-[#DC143C] text-white flex items-center justify-center font-bold text-sm">2</span>
-                        <h4 className="text-lg font-bold text-[#DC143C] uppercase tracking-wide">Educational Interests</h4>
+                        <h3 className="text-lg font-bold text-[#DC143C] uppercase tracking-wide">Educational Interests</h3>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -34,10 +34,10 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
+        <footer className="relative bg-linear-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
             {/* Animated Background Pattern */}
             <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse" />
+                <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-purple-500 animate-pulse" />
             </div>
 
             <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -51,7 +51,7 @@ export default function Footer() {
                     {/* Company Info */}
                     <motion.div variants={fadeInUp} className="space-y-6">
                         <div className="flex items-center space-x-3">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex items-center justify-center text-white font-bold text-2xl">
+                            <div className="w-12 h-12 rounded-full bg-linear-to-r from-blue-400 to-purple-400 flex items-center justify-center text-white font-bold text-2xl">
                                 P
                             </div>
                             <span className="text-2xl font-black">Pinnacle Nepal</span>
@@ -68,7 +68,7 @@ export default function Footer() {
                                     href={social.href}
                                     whileHover={{ scale: 1.2, rotate: 360 }}
                                     transition={{ duration: 0.4 }}
-                                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 flex items-center justify-center backdrop-blur-sm transition-smooth"
+                                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-linear-to-r hover:from-blue-400 hover:to-purple-400 flex items-center justify-center backdrop-blur-sm transition-smooth"
                                     aria-label={social.label}
                                 >
                                     <social.icon className="text-lg" />
@@ -118,20 +118,20 @@ export default function Footer() {
                         <h3 className="text-xl font-bold mb-6 gradient-text">Contact Us</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
-                                <HiLocationMarker className="text-2xl text-blue-400 flex-shrink-0 mt-1" />
+                                <HiLocationMarker className="text-2xl text-blue-400 shrink-0 mt-1" />
                                 <span className="text-gray-300">
                                     Kathmandu, Nepal<br />
                                     Thamel, Ward No. 26
                                 </span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <HiPhone className="text-2xl text-purple-400 flex-shrink-0" />
+                                <HiPhone className="text-2xl text-purple-400 shrink-0" />
                                 <a href="tel:+919550560184" className="text-gray-300 hover:text-white transition-smooth">
                                     +91 9550560184
                                 </a>
                             </li>
                             <li className="flex items-center gap-3">
-                                <HiMail className="text-2xl text-pink-400 flex-shrink-0" />
+                                <HiMail className="text-2xl text-pink-400 shrink-0" />
                                 <a href="mailto:contact@pinnaclenepal.com" className="text-gray-300 hover:text-white transition-smooth">
                                     contact@pinnaclenepal.com
                                 </a>

@@ -28,8 +28,8 @@ export default function SectionWrapper({
 
     const backgroundClasses = {
         white: "bg-white",
-        gradient: "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50",
-        pattern: "bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:20px_20px]",
+        gradient: "bg-linear-to-br from-blue-50 via-purple-50 to-pink-50",
+        pattern: "bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[20px_20px]",
         animated: "animated-gradient",
     };
 

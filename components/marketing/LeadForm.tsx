@@ -31,7 +31,7 @@ export default function LeadForm() {
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     </div>
                                     <div>
-                                        <h4 className="font-bold">98% Visa Success</h4>
+                                        <h3 className="font-bold">98% Visa Success</h3>
                                         <p className="text-sm text-blue-200">Proven track record with top embassies.</p>
                                     </div>
                                 </div>

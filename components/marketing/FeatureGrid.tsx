@@ -54,7 +54,7 @@ export default function FeatureGrid() {
                             transition={{ delay: index * 0.1 }}
                             className="group p-8 bg-white border border-gray-100/50 shadow-lg hover:shadow-2xl transition-all duration-300 rounded-xl hover:border-pinnacle-orange/20"
                         >
-                            <div className="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-pinnacle-orange group-hover:to-orange-600 transition-all duration-300 shadow-inner">
+                            <div className="w-16 h-16 bg-linear-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-linear-to-br group-hover:from-pinnacle-orange group-hover:to-orange-600 transition-all duration-300 shadow-inner">
                                 <service.icon className="w-8 h-8 text-pinnacle-orange group-hover:text-white transition-colors duration-300" />
                             </div>
 

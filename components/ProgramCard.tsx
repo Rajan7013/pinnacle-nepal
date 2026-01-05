@@ -22,14 +22,14 @@ export default function ProgramCard({ title, image, description }: ProgramCardPr
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-60" />
                 <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-2xl font-bold text-white mb-1 drop-shadow-md">{title}</h3>
                 </div>
             </div>
 
             {/* Content */}
-            <div className="p-6 flex flex-col flex-grow">
+            <div className="p-6 flex flex-col grow">
                 <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
                     {description}
                 </p>

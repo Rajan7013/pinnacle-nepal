@@ -77,7 +77,7 @@ export default function ConsultationPopup() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={handleClose}
-                        className="fixed inset-0 bg-black/60 z-[9999] backdrop-blur-sm"
+                        className="fixed inset-0 bg-black/60 z-9999 backdrop-blur-sm"
                     />
 
                     {/* Modal */}
@@ -85,12 +85,13 @@ export default function ConsultationPopup() {
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white rounded-2xl shadow-2xl z-[10000] overflow-hidden"
+                        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white rounded-2xl shadow-2xl z-10000 overflow-hidden"
                     >
                         {/* Close Button */}
                         <button
                             onClick={handleClose}
                             className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
+                            aria-label="Close consultation popup"
                         >
                             <HiX className="text-xl" />
                         </button>
@@ -124,6 +125,7 @@ export default function ConsultationPopup() {
                                             name="name"
                                             placeholder="Full Name *"
                                             required
+                                            aria-label="Full Name"
                                             className="w-full px-4 py-3 rounded-lg border border-gray-200 outline-none focus:border-[#4ADE80] focus:ring-1 focus:ring-[#4ADE80] transition-all text-gray-800 placeholder-gray-400"
                                         />
                                     </div>
@@ -140,6 +142,7 @@ export default function ConsultationPopup() {
                                             name="phone"
                                             placeholder="Mobile Number *"
                                             required
+                                            aria-label="Mobile Number"
                                             className="w-full px-4 py-3 rounded-lg border border-gray-200 outline-none focus:border-[#4ADE80] focus:ring-1 focus:ring-[#4ADE80] transition-all text-gray-800 placeholder-gray-400"
                                         />
                                     </div>
@@ -151,6 +154,7 @@ export default function ConsultationPopup() {
                                             name="email"
                                             placeholder="Email ID *"
                                             required
+                                            aria-label="Email Address"
                                             className="w-full px-4 py-3 rounded-lg border border-gray-200 outline-none focus:border-[#4ADE80] focus:ring-1 focus:ring-[#4ADE80] transition-all text-gray-800 placeholder-gray-400"
                                         />
                                     </div>
@@ -160,6 +164,7 @@ export default function ConsultationPopup() {
                                         <select
                                             name="country"
                                             required
+                                            aria-label="Destination"
                                             className="w-full px-4 py-3 rounded-lg border border-gray-200 outline-none focus:border-[#4ADE80] focus:ring-1 focus:ring-[#4ADE80] transition-all text-gray-800 bg-white appearance-none cursor-pointer"
                                             defaultValue=""
                                         >
@@ -182,7 +187,7 @@ export default function ConsultationPopup() {
                                             className="mt-1 w-4 h-4 text-[#4ADE80] border-gray-300 rounded focus:ring-[#4ADE80]"
                                         />
                                         <label htmlFor="terms" className="text-xs text-gray-500 leading-snug">
-                                            I agree to Pinnacle Nepal's <span className="text-[#6366f1] cursor-pointer">Privacy Policy</span> and <span className="text-[#6366f1] cursor-pointer">Terms and Conditions</span> *
+                                            I agree to Pinnacle Nepal's <span className="text-[#4f46e5] cursor-pointer font-semibold">Privacy Policy</span> and <span className="text-[#4f46e5] cursor-pointer font-semibold">Terms and Conditions</span> *
                                         </label>
                                     </div>
 

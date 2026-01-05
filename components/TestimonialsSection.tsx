@@ -81,7 +81,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: any; index: numb
             </div>
 
             {/* Quote */}
-            <p className="text-gray-700 mb-6 italic leading-relaxed flex-grow">
+            <p className="text-gray-700 mb-6 italic leading-relaxed grow">
                 "{testimonial.quote}"
             </p>
 
@@ -97,7 +97,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: any; index: numb
                     />
                 </div>
                 <div>
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                    <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
                     <p className="text-sm text-gray-600">{testimonial.university}</p>
                     <p className="text-xs text-gray-500">{testimonial.course} • {testimonial.year}</p>
                 </div>
@@ -112,9 +112,9 @@ export default function TestimonialsSection() {
     if (!mounted) return null;
 
     return (
-        <section className="py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <section className="py-10 bg-linear-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30" />
+            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[16px_16px] opacity-30" />
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Header */}
