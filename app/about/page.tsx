@@ -48,11 +48,16 @@ const values = [
 ];
 
 const milestones = [
-    { year: "2016", event: "Founded with a vision to transform international education", icon: "🚀" },
-    { year: "2018", event: "Expanded to 10+ countries with 100+ partner universities", icon: "🌍" },
-    { year: "2020", event: "Reached milestone of 5,000 successful student placements", icon: "🎓" },
-    { year: "2022", event: "Launched AI-powered university matching system", icon: "🤖" },
-    { year: "2024", event: "Celebrated 10,000+ students studying abroad", icon: "🎉" },
+    { year: "2016", event: "Founded with a vision to transform international education for Nepali students", icon: "🚀" },
+    { year: "2017", event: "Partnered with 25+ universities across UK, Australia, and USA", icon: "🤝" },
+    { year: "2018", event: "Achieved 500+ successful student placements with 95% visa success rate", icon: "🎓" },
+    { year: "2019", event: "Expanded to 50+ partner universities across 8 countries", icon: "🌍" },
+    { year: "2020", event: "Launched virtual counseling during pandemic, serving 1,000+ students remotely", icon: "💻" },
+    { year: "2021", event: "Reached 1,500+ students placed with 98% visa approval rate", icon: "✈️" },
+    { year: "2022", event: "Expanded to 100+ top colleges globally, introduced AI-powered course matching", icon: "🤖" },
+    { year: "2023", event: "Celebrated 2,500+ successful placements, opened new counseling center", icon: "🏢" },
+    { year: "2024", event: "Achieved 3,000+ students studying abroad across 10+ countries", icon: "🎉" },
+    { year: "2025", event: "10 years of excellence - Leading Nepal's international education consultancy", icon: "🏆" },
 ];
 
 function AnimatedCounter({ end, suffix = "", duration = 2 }: { end: number; suffix?: string; duration?: number }) {
