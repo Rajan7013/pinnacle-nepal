@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://pinnacle-nepal.vercel.app';
+    const baseUrl = 'https://www.pinnaclenepal.org';
 
     return [
         {
@@ -39,6 +39,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blog`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/blog/complete-guide-mbbs-india-2026`,
+            lastModified: new Date('2026-01-12'),
+            changeFrequency: 'monthly',
+            priority: 0.7,
         },
     ];
 }
