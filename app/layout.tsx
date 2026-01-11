@@ -3,6 +3,7 @@ import "./globals.css";
 import ConsultationPopup from "@/components/ConsultationPopup";
 import TalkToExpertButton from "@/components/TalkToExpertButton";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Analytics from "./analytics";
 import Link from "next/link";
 import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
@@ -180,6 +181,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${poppins.variable} antialiased font-sans`}>
+        <Analytics />
         <ConsultationPopup />
         <WhatsAppButton />
         {children}
