@@ -124,18 +124,18 @@ export default function Footer() {
                         <h3 className="text-xl font-bold mb-4 gradient-text">Contact Us</h3>
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3 text-gray-300">
-                                <HiLocationMarker className="text-blue-400 text-xl flex-shrink-0 mt-1" />
+                                <HiLocationMarker className="text-blue-400 text-xl shrink-0 mt-1" />
                                 <span>New Baneshwor<br />Kathmandu, Nepal</span>
                             </li>
                             <li className="flex items-start gap-3 text-gray-300">
-                                <HiPhone className="text-blue-400 text-xl flex-shrink-0 mt-1" />
+                                <HiPhone className="text-blue-400 text-xl shrink-0 mt-1" />
                                 <div>
                                     <a href="tel:+9779852062628" className="hover:text-white transition-colors block">+977 9852062628</a>
                                     <a href="tel:+9779814362628" className="hover:text-white transition-colors block">+977 9814362628</a>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3 text-gray-300">
-                                <HiMail className="text-blue-400 text-xl flex-shrink-0 mt-1" />
+                                <HiMail className="text-blue-400 text-xl shrink-0 mt-1" />
                                 <a href="mailto:contact@pinnaclenepal.com" className="hover:text-white transition-colors">
                                     contact@pinnaclenepal.com
                                 </a>

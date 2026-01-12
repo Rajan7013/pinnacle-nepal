@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: "Leading educational consultancy in Nepal. Expert guidance for studying MBBS, Engineering abroad. Free consultation. Contact: +977 9852062628",
     images: [
       {
-        url: "/logo.jpg",
+        url: "https://www.pinnaclenepal.org/logo.jpg",
         width: 1200,
         height: 630,
         alt: "Pinnacle Nepal - Educational Consultancy"
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pinnacle Nepal - Top Educational Consultancy in Kathmandu",
     description: "Leading educational consultancy in Nepal. Expert guidance for studying abroad.",
-    images: ["/logo.jpg"],
+    images: ["https://www.pinnaclenepal.org/logo.jpg"],
   },
   robots: {
     index: true,
@@ -81,7 +81,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/logo.jpg',
+    icon: [
+      { url: '/logo.jpg', type: 'image/jpeg' },
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
+    shortcut: '/logo.jpg',
     apple: '/logo.jpg',
   },
   verification: {

@@ -13,12 +13,13 @@ import {
     HiAcademicCap,
     HiPhotograph,
     HiInformationCircle,
-    HiMail
+    HiMail,
+    HiNewspaper
 } from "react-icons/hi";
 import { services } from "@/lib/data/services";
 import { courses } from "@/lib/data/courses";
 
-// Clean 7-tab navigation with professional icons
+// Clean navigation with Blog
 const navLinks = [
     { name: "Home", href: "/", icon: HiHome },
     { name: "Destinations", href: "/destinations", icon: HiGlobeAlt },
@@ -27,6 +28,7 @@ const navLinks = [
     { name: "Gallery", href: "/gallery", icon: HiPhotograph },
     { name: "About Us", href: "/about", icon: HiInformationCircle },
     { name: "Contact", href: "/contact", icon: HiMail },
+    { name: "Blog", href: "/blog", icon: HiNewspaper },
 ];
 
 export default function Header() {
@@ -253,17 +255,6 @@ export default function Header() {
                             );
                         })}
                     </nav>
-
-                    {/* Mobile CTA */}
-                    <div className="p-6 border-t border-gray-200">
-                        <Link
-                            href="/contact"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block text-center px-6 py-4 bg-[#DC143C] text-white font-bold rounded hover:bg-[#B01030] transition-colors shadow-md"
-                        >
-                            Get Started
-                        </Link>
-                    </div>
                 </div>
             </motion.div>
 

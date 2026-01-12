@@ -50,7 +50,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/blog/complete-guide-mbbs-india-2026`,
             lastModified: new Date('2026-01-12'),
             changeFrequency: 'monthly',
-            priority: 0.7,
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blog/mbbs-russia-complete-guide`,
+            lastModified: new Date('2026-01-11'),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blog/mbbs-bangladesh-top-colleges`,
+            lastModified: new Date('2026-01-10'),
+            changeFrequency: 'monthly',
+            priority: 0.8,
         },
     ];
 }

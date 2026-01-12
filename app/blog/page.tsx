@@ -3,6 +3,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import { blogPosts } from '@/lib/data/blogData';
+
+// Show only completed articles
+const completedBlogPosts = blogPosts.slice(0, 3);
 
 export const metadata: Metadata = {
     title: "Blog - Study Abroad Tips & Guides | Pinnacle Nepal",
@@ -17,40 +21,6 @@ export const metadata: Metadata = {
         canonical: "https://www.pinnaclenepal.org/blog",
     },
 };
-
-// Blog posts data
-const blogPosts = [
-    {
-        slug: "complete-guide-mbbs-india-2026",
-        title: "Complete Guide to Studying MBBS in India from Nepal 2026",
-        excerpt: "Everything you need to know about pursuing MBBS in India - admission process, top colleges, fees, eligibility, and NEET requirements for Nepalese students.",
-        date: "2026-01-12",
-        author: "Pinnacle Nepal Team",
-        category: "MBBS Abroad",
-        readTime: "8 min read",
-        image: "/images/blog/mbbs-india.jpg",
-    },
-    {
-        slug: "top-educational-consultancies-nepal",
-        title: "Top 10 Educational Consultancies in Nepal - How to Choose the Right One",
-        excerpt: "Comprehensive guide to selecting the best educational consultancy in Nepal. Learn what to look for, red flags to avoid, and how Pinnacle Nepal stands out.",
-        date: "2026-01-11",
-        author: "Pinnacle Nepal Team",
-        category: "Study Abroad Tips",
-        readTime: "6 min read",
-        image: "/images/blog/consultancy-guide.jpg",
-    },
-    {
-        slug: "study-abroad-nepal-complete-guide",
-        title: "Study Abroad from Nepal: Complete Guide for Nepalese Students 2026",
-        excerpt: "Your ultimate guide to studying abroad from Nepal. Explore destinations, courses, scholarships, visa process, and how to choose the right country for your education.",
-        date: "2026-01-10",
-        author: "Pinnacle Nepal Team",
-        category: "Study Abroad",
-        readTime: "10 min read",
-        image: "/images/blog/study-abroad-guide.jpg",
-    },
-];
 
 export default function BlogPage() {
     return (
@@ -76,52 +46,64 @@ export default function BlogPage() {
                 <section className="py-16">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {blogPosts.map((post) => (
-                                <article
-                                    key={post.slug}
-                                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-                                >
-                                    {/* Image Placeholder */}
-                                    <div className="h-48 bg-gradient-to-br from-[#003893] to-[#DC143C] flex items-center justify-center">
-                                        <span className="text-white text-6xl">📚</span>
-                                    </div>
+                            {completedBlogPosts.map((post, index) => {
+                                // Define different glow colors for each card
+                                const glowColors = [
+                                    'shadow-[0_8px_30px_rgba(59,130,246,0.4)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.6)]', // Blue
+                                    'shadow-[0_8px_30px_rgba(168,85,247,0.4)] hover:shadow-[0_8px_40px_rgba(168,85,247,0.6)]', // Purple
+                                    'shadow-[0_8px_30px_rgba(34,197,94,0.4)] hover:shadow-[0_8px_40px_rgba(34,197,94,0.6)]', // Green
+                                ];
 
-                                    <div className="p-6">
-                                        {/* Category Badge */}
-                                        <span className="inline-block bg-[#003893] text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                                            {post.category}
-                                        </span>
-
-                                        {/* Title */}
-                                        <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                                            {post.title}
-                                        </h2>
-
-                                        {/* Excerpt */}
-                                        <p className="text-gray-600 mb-4 line-clamp-3">
-                                            {post.excerpt}
-                                        </p>
-
-                                        {/* Meta Info */}
-                                        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                                            <div className="flex items-center gap-2">
-                                                <Calendar className="w-4 h-4" />
-                                                <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                                            </div>
-                                            <span>{post.readTime}</span>
+                                return (
+                                    <article
+                                        key={post.slug}
+                                        className={`group bg-white rounded-2xl overflow-hidden transition-all duration-500 transform hover:-translate-y-4 hover:scale-105 relative
+                                        ${glowColors[index % glowColors.length]}
+                                        border-2 border-gray-100 hover:border-gray-200`}
+                                    >
+                                        {/* Image Placeholder with glow */}
+                                        <div className="h-48 bg-linear-to-br from-[#003893] to-[#DC143C] flex items-center justify-center relative overflow-hidden">
+                                            <div className="absolute inset-0 bg-gradient-to-br from-[#003893]/20 to-[#DC143C]/20 group-hover:scale-110 transition-transform duration-500" />
+                                            <span className="text-white text-4xl relative z-10 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300">📚</span>
                                         </div>
 
-                                        {/* Read More Link */}
-                                        <Link
-                                            href={`/blog/${post.slug}`}
-                                            className="inline-flex items-center gap-2 text-[#003893] font-semibold hover:text-[#DC143C] transition-colors"
-                                        >
-                                            Read More
-                                            <ArrowRight className="w-4 h-4" />
-                                        </Link>
-                                    </div>
-                                </article>
-                            ))}
+                                        <div className="p-6 relative z-10">
+                                            {/* Category Badge */}
+                                            <span className="inline-block bg-[#003893] text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 group-hover:bg-[#DC143C] group-hover:shadow-[0_0_10px_rgba(220,20,60,0.5)] transition-all duration-300">
+                                                {post.category}
+                                            </span>
+
+                                            {/* Title */}
+                                            <h2 className="text-xl font-bold text-gray-900 mb-3 min-h-14 group-hover:text-[#003893] transition-colors duration-300">
+                                                {post.title}
+                                            </h2>
+
+                                            {/* Excerpt */}
+                                            <p className="text-gray-600 mb-4 line-clamp-3">
+                                                {post.excerpt}
+                                            </p>
+
+                                            {/* Meta Info */}
+                                            <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                                <div className="flex items-center gap-2">
+                                                    <Calendar className="w-4 h-4" />
+                                                    <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                                </div>
+                                                <span>{post.readTime}</span>
+                                            </div>
+
+                                            {/* Read More Link */}
+                                            <Link
+                                                href={`/blog/${post.slug}`}
+                                                className="inline-flex items-center gap-2 text-[#003893] font-semibold group-hover:text-[#DC143C] transition-colors duration-300"
+                                            >
+                                                Read More
+                                                <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                                            </Link>
+                                        </div>
+                                    </article>
+                                );
+                            })}
                         </div>
                     </div>
                 </section>
