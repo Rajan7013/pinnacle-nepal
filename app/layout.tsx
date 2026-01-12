@@ -82,11 +82,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.jpg', type: 'image/jpeg' },
-      { url: '/favicon.ico', sizes: 'any' }
+      { url: '/logo.jpg?v=2', type: 'image/jpeg', sizes: '512x512' },
+      { url: '/icon?v=2', sizes: '32x32' },
     ],
-    shortcut: '/logo.jpg',
-    apple: '/logo.jpg',
+    shortcut: [{ url: '/logo.jpg?v=2' }],
+    apple: [{ url: '/logo.jpg?v=2', sizes: '180x180' }],
+    other: [
+      {
+        rel: 'icon',
+        url: '/logo.jpg?v=2',
+      },
+    ],
   },
   verification: {
     // Add Google Search Console verification code here when you get it
