@@ -82,16 +82,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.jpg?v=2', type: 'image/jpeg', sizes: '512x512' },
-      { url: '/icon?v=2', sizes: '32x32' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
-    shortcut: [{ url: '/logo.jpg?v=2' }],
-    apple: [{ url: '/logo.jpg?v=2', sizes: '180x180' }],
-    other: [
-      {
-        rel: 'icon',
-        url: '/logo.jpg?v=2',
-      },
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   verification: {
