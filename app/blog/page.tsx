@@ -8,8 +8,8 @@ import { Calendar, User, ArrowRight } from 'lucide-react';
 import { blogPosts } from '@/lib/data/blogData';
 import TalkToExpertButton from '@/components/TalkToExpertButton';
 
-// Show only completed articles
-const completedBlogPosts = blogPosts.slice(0, 3);
+// Show only completed articles (including new Pinnacle Nepal article)
+const completedBlogPosts = blogPosts.slice(0, 4);
 
 export default function BlogPage() {
     return (
@@ -60,8 +60,8 @@ export default function BlogPage() {
 
                 {/* Blog Posts Grid */}
                 <section className="py-4 bg-blue-50 border-t-2 border-blue-200">
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="container mx-auto px-1 sm:px-2 lg:px-3">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {completedBlogPosts.map((post, index) => {
                                 // Define different glow colors for each card
                                 const glowColors = [
@@ -83,15 +83,16 @@ export default function BlogPage() {
                                             <span className="text-white text-3xl relative z-10 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300">📚</span>
                                         </div>
 
-                                        <div className="p-6 relative z-10">
+
+                                        <div className="p-5 relative z-10">
                                             {/* Category Badge */}
                                             <span className="inline-block bg-[#003893] text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 group-hover:bg-[#DC143C] group-hover:shadow-[0_0_10px_rgba(220,20,60,0.5)] transition-all duration-300">
                                                 {post.category}
                                             </span>
 
-                                            {/* Title */}
-                                            <h2 className="text-xl font-bold text-gray-900 mb-3 min-h-14 group-hover:text-[#003893] transition-colors duration-300">
-                                                {post.title}
+                                            {/* Title - Use short cardTitle for display */}
+                                            <h2 className="text-base font-bold text-gray-900 mb-3 min-h-[4rem] leading-tight group-hover:text-[#003893] transition-colors duration-300">
+                                                {post.cardTitle || post.title}
                                             </h2>
 
                                             {/* Excerpt */}

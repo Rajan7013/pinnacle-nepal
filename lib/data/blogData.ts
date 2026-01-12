@@ -2,6 +2,7 @@
 export interface BlogPost {
     slug: string;
     title: string;
+    cardTitle?: string; // Shorter title for card display
     excerpt: string;
     date: string;
     author: string;
@@ -12,10 +13,25 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+    // Featured Article - Pinnacle Nepal
+    {
+        slug: "pinnacle-nepal-leading-consultancy",
+        title: "Pinnacle Nepal: Leading Educational Consultancy in Kathmandu",
+        cardTitle: "Pinnacle Nepal: Top Consultancy in Kathmandu",
+        excerpt: "Discover why Pinnacle Nepal is the top educational consultancy in Nepal. Learn about our services, success stories, and how we help 500+ students annually achieve their study abroad dreams.",
+        date: "2026-01-13",
+        author: "Pinnacle Nepal Team",
+        category: "About Us",
+        readTime: "10 min read",
+        keywords: ["pinnacle nepal", "top educational consultancy nepal", "study abroad consultancy", "best consultancy kathmandu"],
+        metaDescription: "Pinnacle Nepal is the leading educational consultancy in Kathmandu with 500+ students placed annually. Expert guidance for MBBS, Engineering, MBA abroad in 15 countries."
+    },
+
     // MBBS & Medical Education
     {
         slug: "complete-guide-mbbs-india-2026",
         title: "Complete Guide to Studying MBBS in India from Nepal 2026",
+        cardTitle: "MBBS in India: Complete Guide 2026",
         excerpt: "Everything you need to know about pursuing MBBS in India - admission process, top colleges, eligibility, and NEET requirements for Nepalese students.",
         date: "2026-01-12",
         author: "Pinnacle Nepal Team",
@@ -27,6 +43,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: "mbbs-russia-complete-guide",
         title: "MBBS in Russia: Complete Guide for Nepalese Students 2026",
+        cardTitle: "MBBS in Russia: Complete Guide 2026",
         excerpt: "Discover why Russia is a top choice for MBBS. Learn about admission process, top universities, eligibility, and life as a Nepalese student in Russia.",
         date: "2026-01-11",
         author: "Pinnacle Nepal Team",
@@ -38,6 +55,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: "mbbs-bangladesh-top-colleges",
         title: "MBBS in Bangladesh: Top Medical Colleges 2026",
+        cardTitle: "MBBS in Bangladesh: Top Colleges 2026",
         excerpt: "Explore MBBS opportunities in Bangladesh. Learn about top medical colleges, admission requirements, and why Bangladesh is ideal for Nepalese students.",
         date: "2026-01-10",
         author: "Pinnacle Nepal Team",

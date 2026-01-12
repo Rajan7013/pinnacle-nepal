@@ -84,6 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Blog articles
     const blogArticles = [
         {
+            url: `${baseUrl}/blog/pinnacle-nepal-leading-consultancy`,
+            lastModified: new Date('2026-01-13'),
+            changeFrequency: 'monthly' as const,
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/blog/complete-guide-mbbs-india-2026`,
             lastModified: new Date('2026-01-12'),
             changeFrequency: 'monthly' as const,
