@@ -29,7 +29,7 @@ export default function BlogPage() {
 
             <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
                 {/* Hero Section */}
-                <section className="bg-gradient-to-r from-[#003893] to-[#0052CC] text-white py-20">
+                <section className="bg-linear-to-b from-gray-50 to-white py-16 text-white py-20">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-4xl mx-auto text-center">
                             <h1 className="text-4xl md:text-5xl font-black mb-6">
@@ -63,7 +63,7 @@ export default function BlogPage() {
                                     >
                                         {/* Image Placeholder with glow */}
                                         <div className="h-48 bg-linear-to-br from-[#003893] to-[#DC143C] flex items-center justify-center relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-[#003893]/20 to-[#DC143C]/20 group-hover:scale-110 transition-transform duration-500" />
+                                            <div className="absolute inset-0 bg-linear-to-br from-[#003893]/20 to-[#DC143C]/20 group-hover:scale-110 transition-transform duration-500" />
                                             <span className="text-white text-4xl relative z-10 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300">📚</span>
                                         </div>
 
@@ -109,7 +109,7 @@ export default function BlogPage() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="bg-gradient-to-r from-[#003893] to-[#DC143C] text-white py-16">
+                <section className="bg-linear-to-r from-[#003893] to-[#DC143C] text-white py-16">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         <h2 className="text-3xl md:text-4xl font-black mb-4">
                             Ready to Start Your Study Abroad Journey?

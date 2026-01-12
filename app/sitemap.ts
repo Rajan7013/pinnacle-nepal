@@ -24,16 +24,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/destinations`,
+            url: `${baseUrl}/programs`,
             lastModified: new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/classes`,
+            url: `${baseUrl}/destinations`,
             lastModified: new Date(),
             changeFrequency: 'monthly' as const,
-            priority: 0.8,
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/gallery`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
         },
         {
             url: `${baseUrl}/contact`,
@@ -49,8 +55,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
-    // Individual destination pages
-    const destinations = ['usa', 'uk', 'canada', 'australia', 'germany', 'france', 'japan', 'south-korea'];
+    // Individual destination pages - ALL countries
+    const destinations = [
+        'usa',
+        'uk',
+        'canada',
+        'australia',
+        'germany',
+        'france',
+        'japan',
+        'south-korea',
+        'china',
+        'russia',
+        'new-zealand',
+        'ireland',
+        'netherlands',
+        'switzerland',
+        'singapore'
+    ];
+
     const destinationPages = destinations.map(dest => ({
         url: `${baseUrl}/destinations/${dest}`,
         lastModified: new Date(),
