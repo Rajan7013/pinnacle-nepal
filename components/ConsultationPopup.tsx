@@ -26,45 +26,43 @@ export default function ConsultationPopup() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        try {
-            const googleSheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
+        // 🚀 INSTANT SUCCESS - Show immediately
+        setIsSubmitted(true);
 
-            if (googleSheetsUrl) {
-                const form = e.currentTarget;
-                const formDataObj = new FormData(form);
+        // Send data in background (fire and forget)
+        const googleSheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
 
-                const submissionData = {
-                    name: formDataObj.get('name') as string,
-                    email: formDataObj.get('email') as string,
-                    phone: formDataObj.get('phone') as string,
-                    country: formDataObj.get('country') as string,
-                    course: '',
-                    message: `Interested in studying in ${formDataObj.get('country')}`,
-                    formType: 'Consultation Popup'
-                };
+        if (googleSheetsUrl) {
+            const form = e.currentTarget;
+            const formDataObj = new FormData(form);
 
-                await fetch(googleSheetsUrl, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(submissionData)
-                });
-            }
+            const submissionData = {
+                name: formDataObj.get('name') as string,
+                email: formDataObj.get('email') as string,
+                phone: formDataObj.get('phone') as string,
+                country: formDataObj.get('country') as string,
+                course: '',
+                message: `Interested in studying in ${formDataObj.get('country')}`,
+                formType: 'Consultation Popup'
+            };
 
-            setIsSubmitted(true);
-            setTimeout(() => {
-                handleClose();
-            }, 2000);
-        } catch (error) {
-            console.error('Submission error:', error);
-            // Still show success to user even if submission fails
-            setIsSubmitted(true);
-            setTimeout(() => {
-                handleClose();
-            }, 2000);
+            // Don't await - send in background
+            fetch(googleSheetsUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(submissionData)
+            }).catch(error => {
+                console.error('Background submission error:', error);
+            });
         }
+
+        // Close popup after showing success
+        setTimeout(() => {
+            handleClose();
+        }, 2000);
     };
 
     return (
@@ -131,16 +129,11 @@ export default function ConsultationPopup() {
                                     </div>
 
                                     {/* Mobile Number */}
-                                    <div className="flex gap-2">
-                                        <div className="w-20 shrink-0">
-                                            <div className="w-full h-full flex items-center justify-center px-3 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-600 font-medium">
-                                                +977
-                                            </div>
-                                        </div>
+                                    <div>
                                         <input
                                             type="tel"
                                             name="phone"
-                                            placeholder="Mobile Number *"
+                                            placeholder="Mobile Number (with country code) *"
                                             required
                                             aria-label="Mobile Number"
                                             className="w-full px-4 py-3 rounded-lg border border-gray-200 outline-none focus:border-[#4ADE80] focus:ring-1 focus:ring-[#4ADE80] transition-all text-gray-800 placeholder-gray-400"

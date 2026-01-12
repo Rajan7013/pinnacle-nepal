@@ -81,41 +81,16 @@ export default function ContactForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // 🚀 INSTANT FEEDBACK - Brief spinner then success
         setIsSubmitting(true);
 
-        try {
-            const googleSheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
-
-            if (!googleSheetsUrl) {
-                console.error('Google Sheets URL not configured');
-                setSubmitStatus("error");
-                setIsSubmitting(false);
-                setTimeout(() => setSubmitStatus("idle"), 3000);
-                return;
-            }
-
-            const submissionData = {
-                name: `${formData.firstName} ${formData.lastName}`.trim(),
-                email: formData.email,
-                phone: formData.phone,
-                country: formData.interestedCountry,
-                course: formData.interestedCourse,
-                message: `Address: ${formData.address}\nCountry: ${formData.country}\nZip: ${formData.zipCode}\nPreferred College: ${formData.preferredCollege}\n\nMessage: ${formData.message}`,
-                formType: 'Contact Form'
-            };
-
-            const response = await fetch(googleSheetsUrl, {
-                method: 'POST',
-                mode: 'no-cors', // Google Apps Script requires no-cors
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(submissionData)
-            });
-
-            // With no-cors, we can't read the response, so we assume success
+        // Show brief "sending" animation (300ms) then success
+        setTimeout(() => {
             setIsSubmitting(false);
             setSubmitStatus("success");
+
+            // Clear form immediately
             setFormData({
                 firstName: "",
                 lastName: "",
@@ -129,13 +104,37 @@ export default function ContactForm() {
                 preferredCollege: "",
                 message: "",
             });
-            setTimeout(() => setSubmitStatus("idle"), 5000);
-        } catch (error) {
-            console.error('Form submission error:', error);
-            setIsSubmitting(false);
-            setSubmitStatus("error");
-            setTimeout(() => setSubmitStatus("idle"), 3000);
+        }, 300);
+
+        // Send data in background (fire and forget)
+        const googleSheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
+
+        if (googleSheetsUrl) {
+            const submissionData = {
+                name: `${formData.firstName} ${formData.lastName}`.trim(),
+                email: formData.email,
+                phone: formData.phone,
+                country: formData.interestedCountry,
+                course: formData.interestedCourse,
+                message: `Address: ${formData.address}\nCountry: ${formData.country}\nZip: ${formData.zipCode}\nPreferred College: ${formData.preferredCollege}\n\nMessage: ${formData.message}`,
+                formType: 'Contact Form'
+            };
+
+            // Don't await - send in background
+            fetch(googleSheetsUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(submissionData)
+            }).catch(error => {
+                console.error('Background submission error:', error);
+            });
         }
+
+        // Hide success message after 5s
+        setTimeout(() => setSubmitStatus("idle"), 5300);
     };
 
     const renderField = (
