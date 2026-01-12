@@ -3,66 +3,82 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.pinnaclenepal.org';
 
-    return [
+    // Main pages
+    const mainPages = [
         {
             url: baseUrl,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 1,
         },
         {
             url: `${baseUrl}/about`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/services`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/destinations`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/classes`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/contact`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/blog`,
             lastModified: new Date(),
-            changeFrequency: 'weekly',
+            changeFrequency: 'weekly' as const,
             priority: 0.9,
         },
+    ];
+
+    // Individual destination pages
+    const destinations = ['usa', 'uk', 'canada', 'australia', 'germany', 'france', 'japan', 'south-korea'];
+    const destinationPages = destinations.map(dest => ({
+        url: `${baseUrl}/destinations/${dest}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
+    // Blog articles
+    const blogArticles = [
         {
             url: `${baseUrl}/blog/complete-guide-mbbs-india-2026`,
             lastModified: new Date('2026-01-12'),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/blog/mbbs-russia-complete-guide`,
             lastModified: new Date('2026-01-11'),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/blog/mbbs-bangladesh-top-colleges`,
             lastModified: new Date('2026-01-10'),
-            changeFrequency: 'monthly',
+            changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
     ];
+
+    return [...mainPages, ...destinationPages, ...blogArticles];
 }
