@@ -29,13 +29,14 @@ export default function BlogPage() {
 
             <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
                 {/* Hero Section */}
-                <section className="bg-linear-to-b from-gray-50 to-white py-16 text-white py-20">
+                <section className="bg-white py-16 border-b border-gray-100">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-4xl mx-auto text-center">
-                            <h1 className="text-4xl md:text-5xl font-black mb-6">
-                                Study Abroad <span className="text-[#FFD700]">Blog</span>
+                            <h1 className="text-5xl md:text-6xl font-black mb-4">
+                                <span className="text-gray-900">Study Abroad </span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003893] to-[#DC143C]">Blog</span>
                             </h1>
-                            <p className="text-xl text-gray-100">
+                            <p className="text-xl text-gray-600 leading-relaxed">
                                 Expert insights, guides, and tips for Nepalese students planning to study abroad
                             </p>
                         </div>
@@ -43,7 +44,7 @@ export default function BlogPage() {
                 </section>
 
                 {/* Blog Posts Grid */}
-                <section className="py-16">
+                <section className="py-4 bg-blue-50 border-t-2 border-blue-200">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {completedBlogPosts.map((post, index) => {
