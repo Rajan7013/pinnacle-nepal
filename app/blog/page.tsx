@@ -1,26 +1,15 @@
-import { Metadata } from 'next';
+"use client";
+
+import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { blogPosts } from '@/lib/data/blogData';
+import TalkToExpertButton from '@/components/TalkToExpertButton';
 
 // Show only completed articles
 const completedBlogPosts = blogPosts.slice(0, 3);
-
-export const metadata: Metadata = {
-    title: "Blog - Study Abroad Tips & Guides | Pinnacle Nepal",
-    description: "Read expert articles about studying abroad, MBBS admissions, university guides, visa tips, and student success stories from Pinnacle Nepal.",
-    keywords: "study abroad blog, MBBS tips, university guides, student visa Nepal, education articles",
-    openGraph: {
-        title: "Blog - Study Abroad Tips & Guides | Pinnacle Nepal",
-        description: "Expert articles about studying abroad from Nepal's leading educational consultancy.",
-        url: "https://www.pinnaclenepal.org/blog",
-    },
-    alternates: {
-        canonical: "https://www.pinnaclenepal.org/blog",
-    },
-};
 
 export default function BlogPage() {
     return (
@@ -29,17 +18,43 @@ export default function BlogPage() {
 
             <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
                 {/* Hero Section */}
-                <section className="bg-white py-16 border-b border-gray-100">
-                    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="max-w-4xl mx-auto text-center">
-                            <h1 className="text-5xl md:text-6xl font-black mb-4">
-                                <span className="text-gray-900">Study Abroad </span>
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003893] to-[#DC143C]">Blog</span>
+                <section className="relative pt-20 pb-24 bg-linear-to-br from-[#003893] via-[#0052CC] to-[#DC143C] overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)] opacity-50" />
+                    <div className="absolute inset-0 bg-[url('/images/world-map.svg')] opacity-10 bg-center bg-no-repeat bg-cover" />
+
+                    <div className="container mx-auto px-4 relative z-10">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="text-center max-w-4xl mx-auto"
+                        >
+                            <motion.div
+                                animate={{
+                                    y: [0, -8, 0],
+                                    x: [0, 5, -5, 0],
+                                    rotate: [0, 2, -2, 0],
+                                }}
+                                transition={{
+                                    duration: 5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold mb-4 mt-2 border border-white/30"
+                            >
+                                <span className="text-white">📚 Expert Insights • Study Abroad Tips</span>
+                            </motion.div>
+                            <h1 className="text-5xl md:text-6xl font-black mb-3 leading-tight">
+                                <span className="text-white">Study Abroad </span>
+                                <span className="text-white/90">Blog</span>
                             </h1>
-                            <p className="text-xl text-gray-600 leading-relaxed">
+                            <p className="text-xl text-white/90 leading-relaxed">
                                 Expert insights, guides, and tips for Nepalese students planning to study abroad
                             </p>
-                        </div>
+                        </motion.div>
+
+                        {/* Talk to Expert Button */}
+                        <TalkToExpertButton className="hidden md:block absolute right-4 bottom-0 translate-y-full" />
                     </div>
                 </section>
 
@@ -63,9 +78,9 @@ export default function BlogPage() {
                                         border-2 border-gray-100 hover:border-gray-200`}
                                     >
                                         {/* Image Placeholder with glow */}
-                                        <div className="h-48 bg-linear-to-br from-[#003893] to-[#DC143C] flex items-center justify-center relative overflow-hidden">
+                                        <div className="h-32 bg-linear-to-br from-[#003893] to-[#DC143C] flex items-center justify-center relative overflow-hidden">
                                             <div className="absolute inset-0 bg-linear-to-br from-[#003893]/20 to-[#DC143C]/20 group-hover:scale-110 transition-transform duration-500" />
-                                            <span className="text-white text-4xl relative z-10 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300">📚</span>
+                                            <span className="text-white text-3xl relative z-10 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300">📚</span>
                                         </div>
 
                                         <div className="p-6 relative z-10">
