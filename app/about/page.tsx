@@ -349,10 +349,7 @@ export default function AboutPage() {
                                         Founder & CEO
                                     </p>
                                     <p className="text-gray-600 font-semibold mb-4">
-                                        Senior Associate International Students Affairs | International Student Admissions Relations
-                                    </p>
-                                    <p className="text-gray-500 text-sm mb-4">
-                                        🇮🇳 🇳🇵 🇧🇹 🇧🇩 🇱🇰 🇦🇪 🇶🇦 🇿🇼 🇿🇲 🇺🇬 🇰🇪 🇹🇿 🇰🇲 🇬🇭
+                                        International Students Affairs | International Student Admissions Relations
                                     </p>
                                 </div>
 
@@ -374,7 +371,11 @@ export default function AboutPage() {
                                     <ul className="space-y-3">
                                         <li className="flex items-start gap-3">
                                             <HiCheckCircle className="text-green-500 text-xl flex-shrink-0 mt-1" />
-                                            <span className="text-gray-700 text-sm md:text-base"><strong>Apr 2022 - Present:</strong> Senior Associate International Student Affairs, SVCET Official</span>
+                                            <span className="text-gray-700 text-sm md:text-base"><strong>2026:</strong> CEO of Pinnacle Nepal</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <HiCheckCircle className="text-green-500 text-xl flex-shrink-0 mt-1" />
+                                            <span className="text-gray-700 text-sm md:text-base"><strong>Apr 2022 - 2025:</strong> Senior Associate International Student Affairs, SVCET Official</span>
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <HiCheckCircle className="text-green-500 text-xl flex-shrink-0 mt-1" />
@@ -386,7 +387,7 @@ export default function AboutPage() {
                                         </li>
                                         <li className="flex items-start gap-3">
                                             <HiGlobeAlt className="text-blue-500 text-xl flex-shrink-0 mt-1" />
-                                            <span className="text-gray-700 text-sm md:text-base">Visited 15+ countries across Asia, Africa, and Middle East</span>
+                                            <span className="text-gray-700 text-sm md:text-base">Visited 40+ countries across Asia, Africa, and Middle East</span>
                                         </li>
                                     </ul>
                                 </div>
