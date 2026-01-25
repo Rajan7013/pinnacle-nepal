@@ -136,8 +136,8 @@ export default function Footer() {
                             </li>
                             <li className="flex items-start gap-3 text-gray-300">
                                 <HiMail className="text-blue-400 text-xl shrink-0 mt-1" />
-                                <a href="mailto:contact@pinnaclenepal.com" className="hover:text-white transition-colors">
-                                    contact@pinnaclenepal.com
+                                <a href="mailto:contact@pinnaclenepal.org" className="hover:text-white transition-colors">
+                                    contact@pinnaclenepal.org
                                 </a>
                             </li>
                         </ul>

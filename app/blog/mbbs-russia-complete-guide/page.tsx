@@ -172,7 +172,7 @@ export default function MBBSRussiaGuidePage() {
 
                             <div className="space-y-6 my-8">
                                 <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
+                                    <div className="shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
                                         1
                                     </div>
                                     <div>
@@ -182,7 +182,7 @@ export default function MBBSRussiaGuidePage() {
                                 </div>
 
                                 <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
+                                    <div className="shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
                                         2
                                     </div>
                                     <div>
@@ -192,7 +192,7 @@ export default function MBBSRussiaGuidePage() {
                                 </div>
 
                                 <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
+                                    <div className="shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
                                         3
                                     </div>
                                     <div>
@@ -202,7 +202,7 @@ export default function MBBSRussiaGuidePage() {
                                 </div>
 
                                 <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
+                                    <div className="shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
                                         4
                                     </div>
                                     <div>
@@ -212,7 +212,7 @@ export default function MBBSRussiaGuidePage() {
                                 </div>
 
                                 <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
+                                    <div className="shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
                                         5
                                     </div>
                                     <div>
@@ -222,7 +222,7 @@ export default function MBBSRussiaGuidePage() {
                                 </div>
 
                                 <div className="flex gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
+                                    <div className="shrink-0 w-10 h-10 bg-[#003893] text-white rounded-full flex items-center justify-center font-bold">
                                         6
                                     </div>
                                     <div>

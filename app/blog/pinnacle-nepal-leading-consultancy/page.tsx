@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 
 export default function PinnacleNepalArticle() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+        <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-20">
+            <section className="relative bg-linear-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-20">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -118,7 +118,7 @@ export default function PinnacleNepalArticle() {
                             Pinnacle Nepal specializes in placing students in top universities across 15 countries, with particular expertise in MBBS and Engineering programs:
                         </p>
 
-                        <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl mb-6">
+                        <div className="bg-linear-to-r from-blue-50 to-purple-50 p-8 rounded-xl mb-6">
                             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Top Destinations for Nepalese Students</h3>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div>
@@ -204,7 +204,7 @@ export default function PinnacleNepalArticle() {
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-6 mb-6">
-                            <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-lg">
+                            <div className="bg-linear-to-br from-blue-100 to-blue-50 p-6 rounded-lg">
                                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Popular Engineering Courses:</h3>
                                 <ul className="space-y-2 text-gray-700">
                                     <li>• BTech in Computer Science & Engineering</li>
@@ -215,7 +215,7 @@ export default function PinnacleNepalArticle() {
                                 </ul>
                             </div>
 
-                            <div className="bg-gradient-to-br from-purple-100 to-purple-50 p-6 rounded-lg">
+                            <div className="bg-linear-to-br from-purple-100 to-purple-50 p-6 rounded-lg">
                                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Top Engineering Destinations:</h3>
                                 <ul className="space-y-2 text-gray-700">
                                     <li>• India (IITs, NITs, BITS Pilani)</li>
@@ -272,7 +272,7 @@ export default function PinnacleNepalArticle() {
                         <h2 className="text-3xl font-bold text-gray-900 mb-6">
                             Student Success Stories
                         </h2>
-                        <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-xl">
+                        <div className="bg-linear-to-r from-green-50 to-blue-50 p-8 rounded-xl">
                             <p className="text-lg text-gray-700 mb-4">
                                 Over the past decade, Pinnacle Nepal has helped thousands of students achieve their dreams of studying abroad. Our alumni are now practicing doctors, engineers, and business leaders across the globe.
                             </p>
@@ -320,8 +320,8 @@ export default function PinnacleNepalArticle() {
 
                                     <h3 className="text-xl font-semibold text-gray-900 mb-2 mt-6">Email Us</h3>
                                     <p className="text-gray-700 mb-4">
-                                        <a href="mailto:contact@pinnaclenepal.com" className="text-blue-600 hover:underline">
-                                            contact@pinnaclenepal.com
+                                        <a href="mailto:contact@pinnaclenepal.org" className="text-blue-600 hover:underline">
+                                            contact@pinnaclenepal.org
                                         </a>
                                     </p>
 

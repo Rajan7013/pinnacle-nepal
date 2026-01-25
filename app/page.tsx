@@ -80,7 +80,7 @@ export default function HomePage() {
                   </p>
                   <p className="text-gray-600">
                     <span className="font-semibold text-blue-800 block">Email:</span>
-                    <a href="mailto:contact@pinnaclenepal.com" className="hover:text-blue-600 transition-colors">contact@pinnaclenepal.com</a>
+                    <a href="mailto:contact@pinnaclenepal.org" className="hover:text-blue-600 transition-colors">contact@pinnaclenepal.org</a>
                   </p>
                 </motion.div>
 

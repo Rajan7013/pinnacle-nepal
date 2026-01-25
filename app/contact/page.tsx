@@ -87,7 +87,7 @@ export default function ContactPage() {
                                     <HiMail className="text-2xl" />
                                 </div>
                                 <h3 className="font-bold text-green-900 mb-2">Email Us</h3>
-                                <p className="text-gray-700 text-sm font-medium">contact@pinnaclenepal.com</p>
+                                <p className="text-gray-700 text-sm font-medium">contact@pinnaclenepal.org</p>
                             </motion.div>
 
                             <motion.div
