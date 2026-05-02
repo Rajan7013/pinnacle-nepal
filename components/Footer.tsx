@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    // { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
 ];
@@ -125,7 +125,12 @@ export default function Footer() {
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3 text-gray-300">
                                 <HiLocationMarker className="text-blue-400 text-xl shrink-0 mt-1" />
-                                <span>New Baneshwor<br />Kathmandu, Nepal</span>
+                                <span>
+                                    3rd floor, House no 1068<br />
+                                    Kusum Ganga Complex, Madan Bhandari Road<br />
+                                    New Baneshwor Chock, Kathmandu- Wada No 31<br />
+                                    Nepal
+                                </span>
                             </li>
                             <li className="flex items-start gap-3 text-gray-300">
                                 <HiPhone className="text-blue-400 text-xl shrink-0 mt-1" />

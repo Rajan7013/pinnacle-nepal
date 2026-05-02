@@ -61,8 +61,10 @@ export default function HomePage() {
                   className="glass rounded-xl p-6"
                 >
                   <h3 className="text-xl font-bold mb-4 text-blue-900">Visit Our Office</h3>
-                  <p className="text-gray-600">New Baneshwor</p>
-                  <p className="text-gray-600">Kathmandu, Nepal</p>
+                  <p className="text-gray-600">3rd floor, House no 1068</p>
+                  <p className="text-gray-600">Kusum Ganga Complex, Madan Bhandari Road</p>
+                  <p className="text-gray-600">New Baneshwor Chock, Kathmandu- Wada No 31</p>
+                  <p className="text-gray-600">Nepal</p>
                 </motion.div>
 
                 <motion.div

@@ -1,122 +1,118 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import TalkToExpertButton from "./TalkToExpertButton";
-import Image from "next/image";
+import { HERO_SLIDES, HeroSlide } from "./heroData";
 
-const TOTAL_HERO_IMAGES = 13;
-const IMAGE_CHANGE_INTERVAL = 2000; // 2 seconds
-
-// Simple, short one-line titles for each image
-const heroTitles = [
-    "University & College Selection",
-    "Study Abroad Opportunities",
-    "Expert Visa Assistance",
-    "Scholarship Guidance",
-    "Career Counseling Services",
-    "Application Support",
-    "Pre-Departure Services",
-    "Student Success Stories",
-    "Global Education Network",
-    "IELTS & Test Preparation",
-    "Country Selection Guidance",
-    "Program Matching Services",
-    "Post-Arrival Support",
-];
-
+/**
+ * Hero Section — Image-driven layout.
+ * Text is baked into the images. Code only adds CTA buttons + auto-slide.
+ *
+ * The image IS the hero: uses w-full h-auto so the image's natural
+ * aspect ratio controls the section height. ZERO cropping.
+ *
+ * Image ratios:
+ *   Desktop: 1672×941  (1.78:1, 16:9)
+ *   Tablet:  1619×971  (1.67:1, 5:3)
+ *   Mobile:  1498×1050 (1.43:1, 10:7)
+ */
 export default function HeroSection() {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
 
-    // Auto-cycle through images every 2 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % TOTAL_HERO_IMAGES);
-        }, IMAGE_CHANGE_INTERVAL);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    const currentTitle = heroTitles[currentImageIndex] || heroTitles[0];
-    const currentImage = `/images/hero/hero-${currentImageIndex + 1}.webp`;
-
-    return (
-        <section className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[900px] flex items-end overflow-hidden">
-            {/* Background Image Carousel - Right to Left Sliding */}
-            <AnimatePresence initial={false} mode="popLayout">
-                <motion.div
-                    key={currentImageIndex}
-                    initial={{ x: "100%" }}
-                    animate={{ x: 0 }}
-                    exit={{ x: "-100%" }}
-                    transition={{
-                        duration: 0.8,
-                        ease: [0.4, 0, 0.2, 1] // Smooth easing
-                    }}
-                    className="absolute inset-0 z-0"
-                >
-                    <Image
-                        src={currentImage}
-                        alt={`Pinnacle Nepal - ${currentTitle}`}
-                        fill
-                        className="object-cover object-center"
-                        sizes="100vw"
-                        priority={currentImageIndex === 0}
-                    />
-                    {/* Gradient overlay at bottom for text readability */}
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-                </motion.div>
-            </AnimatePresence>
-
-            {/* Text - Bottom positioned, fully responsive */}
-            <div className="relative z-10 w-full pb-12 sm:pb-14 md:pb-16 lg:pb-12">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-                    {/* Fixed height container to prevent CLS */}
-                    <div className="relative min-h-12 sm:min-h-14 md:min-h-16 lg:min-h-20 xl:min-h-24 flex items-center justify-center">
-                        <AnimatePresence mode="wait">
-                            <motion.h1
-                                key={currentImageIndex}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.4 }}
-                                className="absolute inset-0 flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center leading-tight"
-                            >
-                                {currentTitle}
-                            </motion.h1>
-                        </AnimatePresence>
-                    </div>
-
-                    {/* Talk to Expert Button - Bottom Right of Content */}
-                    <TalkToExpertButton className="hidden md:block absolute right-0 bottom-0 translate-y-full md:translate-y-1/2" />
-                </div>
-            </div>
-
-            {/* Image Navigation Dots - Responsive */}
-            <div className="absolute bottom-4 sm:bottom-5 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-1.5 sm:gap-2">
-                {Array.from({ length: TOTAL_HERO_IMAGES }).map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`transition-all duration-300 p-2 ${index === currentImageIndex
-                            ? "bg-[#E75F41]/20"
-                            : "bg-transparent"
-                            } rounded-full min-w-[48px] min-h-[48px] flex items-center justify-center`}
-                        aria-label={`Go to slide ${index + 1}`}
-                    >
-                        <span
-                            className={`block rounded-full transition-all ${index === currentImageIndex
-                                ? "bg-[#E75F41] w-6 h-2"
-                                : "bg-white/50 hover:bg-white/80 w-6 h-2"
-                                }`}
-                            style={{
-                                transform: index === currentImageIndex ? 'scaleX(1)' : 'scaleX(0.33)',
-                                transformOrigin: 'center'
-                            }}
-                        />
-                    </button>
-                ))}
-            </div>
-        </section>
+  // Auto-advance slides
+  useEffect(() => {
+    if (HERO_SLIDES.length <= 1) return;
+    const timer = setInterval(
+      () => setCurrent((c) => (c + 1) % HERO_SLIDES.length),
+      5000
     );
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = useCallback((index: number) => setCurrent(index), []);
+
+  const encodeImageName = (name: string) => encodeURIComponent(name);
+
+  return (
+    <section className="relative w-full overflow-hidden bg-slate-900 mt-20">
+      {/* ─── Hero Image (controls section height naturally) ─────── */}
+      <div className="relative w-full">
+        {HERO_SLIDES.map((slide, index) => {
+          const isActive = index === current;
+          return (
+            <motion.div
+              key={slide.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isActive ? 1 : 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className={`w-full ${isActive ? "relative" : "absolute inset-0"}`}
+              style={{ pointerEvents: isActive ? "auto" : "none" }}
+            >
+              <picture className="block w-full">
+                {/* Desktop ≥1024px: 16:9 image */}
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={`/images/hero/laptop/${encodeImageName(slide.image)}.png`}
+                  type="image/png"
+                />
+                {/* Tablet 768-1023px: 5:3 image */}
+                <source
+                  media="(min-width: 768px)"
+                  srcSet={`/images/hero/tablet/${encodeImageName(slide.image)}.png`}
+                  type="image/png"
+                />
+                {/* Mobile <768px: 10:7 image */}
+                <img
+                  src={`/images/hero/mobile/${encodeImageName(slide.image)}.png`}
+                  alt={slide.title}
+                  className="w-full h-auto block"
+                />
+              </picture>
+            </motion.div>
+          );
+        })}
+
+        {/* ─── CTA Buttons (positioned at bottom of image) ──────── */}
+        <div className="absolute z-10 bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-6 left-0 right-0">
+          <div className="container mx-auto px-5 md:px-6 lg:px-8">
+            <div className="flex flex-row gap-2 sm:gap-3">
+              <a
+                href="/contact"
+                className="h-9 sm:h-10 md:h-12 lg:h-14 px-4 sm:px-5 md:px-6 lg:px-8 text-xs sm:text-sm md:text-base bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-sm inline-flex items-center justify-center transition-colors shadow-lg"
+              >
+                Contact Us
+              </a>
+              <a
+                href="/contact?type=consultation"
+                className="h-9 sm:h-10 md:h-12 lg:h-14 px-4 sm:px-5 md:px-6 lg:px-8 text-xs sm:text-sm md:text-base border-2 border-white/80 text-white hover:bg-white hover:text-slate-900 font-bold uppercase rounded-sm inline-flex items-center justify-center transition-colors backdrop-blur-sm"
+              >
+                Book a Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── Slide Indicators ─────────────────────────────────── */}
+        {HERO_SLIDES.length > 1 && (
+          <div className="absolute z-20 flex justify-center gap-2 bottom-2 md:bottom-4 left-0 right-0">
+            {HERO_SLIDES.map((slide, index) => (
+              <button
+                key={slide.id}
+                onClick={() => goToSlide(index)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === current
+                    ? "w-8 bg-orange-500"
+                    : "w-4 bg-white/50 hover:bg-white/70"
+                }`}
+                aria-label={`Go to slide ${index + 1}: ${slide.title}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* ─── Decorative Bottom Bar ─────────────────────────────── */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-orange-500 to-red-600 z-20" />
+    </section>
+  );
 }

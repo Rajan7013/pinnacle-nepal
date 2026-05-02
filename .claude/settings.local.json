@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"public/images/mobile/VISA PROCESSING.png\" \"public/images/mobile/hero-visa.webp\")",
+      "Bash(mv \"public/images/mobile/STUDY INDIA.png\" \"public/images/mobile/hero-study-india.webp\")",
+      "Bash(mv \"public/images/mobile/STUDY ABROAD.png\" \"public/images/mobile/hero-study-abroad.webp\")",
+      "Bash(mv \"public/images/mobile/CAREER COUNSELING.png\" \"public/images/mobile/hero-career-counseling.webp\")",
+      "Bash(mv \"public/images/mobile/TEST PREPARATION.png\" \"public/images/mobile/hero-test-prep.webp\")",
+      "Bash(set NODE_OPTIONS=--max-old-space-size=4096)",
+      "Bash(npx next *)",
+      "Bash(taskkill //F //PID 28388)"
+    ]
+  }
+}

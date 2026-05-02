@@ -26,7 +26,7 @@ const navLinks = [
     { name: "Services", href: "/services", icon: HiBriefcase },
     { name: "Programs", href: "/programs", icon: HiAcademicCap },
     { name: "Gallery", href: "/gallery", icon: HiPhotograph },
-    { name: "About Us", href: "/about", icon: HiInformationCircle },
+    // { name: "About Us", href: "/about", icon: HiInformationCircle },
     { name: "Contact", href: "/contact", icon: HiMail },
     { name: "Blog", href: "/blog", icon: HiNewspaper },
 ];

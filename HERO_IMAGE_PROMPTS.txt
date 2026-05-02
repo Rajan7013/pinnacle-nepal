@@ -1,0 +1,256 @@
+================================================================================
+HERO IMAGE GENERATION PROMPTS - Pinnacle Nepal (Consultancy Platform)
+================================================================================
+
+GLOBAL STYLE GUIDELINES (apply to ALL prompts):
+- Modern, professional educational consultancy aesthetic
+- Clean composition with clear subject focus
+- Professional photography or high-quality 3D illustration style
+- Warm, inviting, aspirational mood
+- Colors: Rich blues, warm oranges/golds, natural lighting
+- Brand feel: Trustworthy, premium, globally-minded
+- Include subtle Indian/Nepali cultural elements where relevant
+- No text overlays in the images (text will be added via code)
+
+================================================================================
+SLIDE 1: VISA PROCESSING
+================================================================================
+
+--- 1a. MOBILE (Portrait, 9:16 ratio, 1080x1920) ---
+Filename: hero-visa-mobile.webp
+Ratio: 9:16 (Portrait)
+Dimensions: 1080 x 1920 pixels
+
+PROMPT:
+A young South Asian student holding an approved passport with visa stamp, 
+looking at camera with a bright confident smile. Modern bright background with 
+subtle blurred passport office or airport elements. Warm natural lighting from 
+the side. Professional educational consultancy aesthetic. Clean composition with 
+the subject centered in the upper half, leaving negative space below for text 
+overlay. Premium, aspirational mood with soft blue and gold tones. 
+Photorealistic style, 4K quality.
+
+--- 1b. TABLET (Landscape, 4:3 ratio, 1280x960) ---
+Filename: hero-visa-tablet.webp
+Ratio: 4:3 (Landscape)
+Dimensions: 1280 x 960 pixels
+
+PROMPT:
+A young South Asian student at a modern desk reviewing visa documents, passport 
+open with visa stamp visible, laptop showing university website in background. 
+Bright professional office or study environment. Natural warm lighting. Clean 
+composition with subject on the left side, open space on the right for text. 
+Professional educational consultancy aesthetic. Blue and gold color palette. 
+Photorealistic, high detail.
+
+--- 1c. DESKTOP (Landscape, 16:9 ratio, 1920x1080) ---
+Filename: hero-visa-desktop.webp
+Ratio: 16:9 (Landscape)
+Dimensions: 1920 x 1080 pixels
+
+PROMPT:
+Wide cinematic shot of a South Asian student receiving approved visa documents 
+from a professional consultant across a modern desk. Clean modern office setting 
+with subtle world map or global elements in background. Warm professional 
+lighting. Subject positioned on left third, ample negative space on right for 
+hero text. Premium educational consultancy atmosphere. Rich blues with warm 
+gold accents. Photorealistic, ultra high definition.
+
+================================================================================
+SLIDE 2: STUDY INDIA
+================================================================================
+
+--- 2a. MOBILE (Portrait, 9:16 ratio, 1080x1920) ---
+Filename: hero-study-india-mobile.webp
+Ratio: 9:16 (Portrait)
+Dimensions: 1080 x 1920 pixels
+
+PROMPT:
+A diverse group of South Asian students walking on a beautiful modern Indian 
+university campus with iconic architecture (like IIT or AIIMS style buildings) 
+in the background. Students carrying books and laptops, engaged in conversation. 
+Bright sunny day, vibrant campus life. Subject centered vertically with some 
+negative space below for text. Warm golden hour lighting, aspirational mood. 
+Clean professional photography style.
+
+--- 2b. TABLET (Landscape, 4:3 ratio, 1280x960) ---
+Filename: hero-study-india-tablet.webp
+Ratio: 4:3 (Landscape)
+Dimensions: 1280 x 960 pixels
+
+PROMPT:
+Wide shot of a prestigious Indian university campus - grand modern architecture 
+mixing traditional Indian design elements with contemporary buildings. Students 
+of various backgrounds walking across a green quad, some with books and laptops. 
+Bright clear day with blue sky. Composition leaves right side open for text. 
+Professional, aspirational educational atmosphere. Rich colors with natural 
+lighting.
+
+--- 2c. DESKTOP (Landscape, 16:9 ratio, 1920x1080) ---
+Filename: hero-study-india-desktop.webp
+Ratio: 16:9 (Landscape)
+Dimensions: 1920 x 1080 pixels
+
+PROMPT:
+Cinematic wide-angle view of a premier Indian university campus at golden hour. 
+Stunning modern architecture with Indian design influences, expansive green 
+lawns, students engaged in academic activities. Some students in graduation 
+caps suggesting success. Left third has subtle subject focus, right two-thirds 
+open for hero text overlay. Warm golden sunlight, professional photography, 
+ultra high detail, aspirational mood with rich blues and warm tones.
+
+================================================================================
+SLIDE 3: STUDY ABROAD
+================================================================================
+
+--- 3a. MOBILE (Portrait, 9:16 ratio, 1080x1920) ---
+Filename: hero-study-abroad-mobile.webp
+Ratio: 9:16 (Portrait)
+Dimensions: 1080 x 1920 pixels
+
+PROMPT:
+A young South Asian student standing in front of an iconic international 
+landmark (like Big Ben, Eiffel Tower, or modern university building abroad), 
+looking up with an excited hopeful expression. Luggage/duffel bag at their feet 
+suggesting arrival. Beautiful overcast or golden hour lighting. Subject centered 
+with negative space below for text. Clean composition, aspirational mood. 
+Professional photography, premium quality.
+
+--- 3b. TABLET (Landscape, 4:3 ratio, 1280x960) ---
+Filename: hero-study-abroad-tablet.webp
+Ratio: 4:3 (Landscape)
+Dimensions: 1280 x 960 pixels
+
+PROMPT:
+A South Asian student walking through a beautiful international university 
+campus abroad - classic European or American architecture with autumn trees. 
+Student carrying backpack, looking around with wonder and excitement. Bright 
+clear day. Composition with subject on left side, open campus scenery on right 
+for text placement. Warm natural lighting, aspirational global education mood. 
+Professional photography style.
+
+--- 3c. DESKTOP (Landscape, 16:9 ratio, 1920x1080) ---
+Filename: hero-study-abroad-desktop.webp
+Ratio: 16:9 (Landscape)
+Dimensions: 1920 x 1080 pixels
+
+PROMPT:
+Cinematic panoramic view of a prestigious international university campus 
+( blending iconic Western architecture with modern facilities). South Asian 
+students mingling with diverse international students on a vibrant campus quad. 
+Autumn colors or bright sunny day. Subject group positioned on left third, 
+ample open space on right for hero text. Inspiring, global education atmosphere. 
+Rich professional photography, ultra high definition, warm and cool color 
+balance.
+
+================================================================================
+SLIDE 4: CAREER COUNSELING
+================================================================================
+
+--- 4a. MOBILE (Portrait, 9:16 ratio, 1080x1920) ---
+Filename: hero-career-counseling-mobile.webp
+Ratio: 9:16 (Portrait)
+Dimensions: 1080 x 1920 pixels
+
+PROMPT:
+A professional career counselor (South Asian, warm friendly expression) sitting 
+with a student at a modern bright office, pointing at educational pathway charts 
+on a tablet. Both engaged in positive discussion. Clean modern office with soft 
+bokeh background. Natural window lighting. Subject centered vertically with 
+space below for text. Trustworthy, professional atmosphere. Clean photography 
+style with blue and warm tones.
+
+--- 4b. TABLET (Landscape, 4:3 ratio, 1280x960) ---
+Filename: hero-career-counseling-tablet.webp
+Ratio: 4:3 (Landscape)
+Dimensions: 1280 x 960 pixels
+
+PROMPT:
+A career counseling session in a bright modern consultancy office. Professional 
+counselor and student sitting across from each other at a clean desk, reviewing 
+career path documents and university brochures. Large window with soft natural 
+light. Counselor on the left, student on right, some open space above for text 
+placement. Warm, professional, trustworthy atmosphere. Blue and neutral color 
+palette.
+
+--- 4c. DESKTOP (Landscape, 16:9 ratio, 1920x1080) ---
+Filename: hero-career-counseling-desktop.webp
+Ratio: 16:9 (Landscape)
+Dimensions: 1920 x 1080 pixels
+
+PROMPT:
+Wide shot of a premium educational consultancy office with modern interior 
+design. A professional counselor presenting career options to a student and 
+parent on a large display or documents. Clean desk with university brochures, 
+laptop showing global university logos. Natural lighting from large windows. 
+Subjects positioned on left half, open space on right for hero text overlay. 
+Professional, premium atmosphere. Rich blue tones with warm accents. Ultra high 
+definition photography.
+
+================================================================================
+SLIDE 5: TEST PREPARATION
+================================================================================
+
+--- 5a. MOBILE (Portrait, 9:16 ratio, 1080x1920) ---
+Filename: hero-test-prep-mobile.webp
+Ratio: 9:16 (Portrait)
+Dimensions: 1080 x 1920 pixels
+
+PROMPT:
+A focused South Asian student studying for IELTS/SAT exams at a modern clean 
+desk setup. Books, laptop with study materials, highlighters, and practice test 
+papers spread out. Student wearing headphones, taking notes with a determined 
+but confident expression. Warm desk lamp lighting with soft ambient light. 
+Subject centered with space below for text overlay. Motivational, studious 
+atmosphere. Clean professional photography.
+
+--- 5b. TABLET (Landscape, 4:3 ratio, 1280x960) ---
+Filename: hero-test-prep-tablet.webp
+Ratio: 4:3 (Landscape)
+Dimensions: 1280 x 960 pixels
+
+PROMPT:
+A small study group of diverse South Asian students preparing for standardized 
+tests together. Modern bright study room with whiteboard showing IELTS/SAT prep 
+notes in background. Students with laptops, textbooks, and practice papers. 
+One student explaining a concept to others. Warm natural lighting from windows. 
+Composition leaves right side open for text. Collaborative, aspirational study 
+environment. Professional photography.
+
+--- 5c. DESKTOP (Landscape, 16:9 ratio, 1920x1080) ---
+Filename: hero-test-prep-desktop.webp
+Ratio: 16:9 (Landscape)
+Dimensions: 1920 x 1080 pixels
+
+PROMPT:
+Cinematic wide shot of a modern test preparation classroom or study center. 
+South Asian students focused on practice tests, laptops, and study materials. 
+An instructor walking between desks helping students. Clean bright modern space 
+with motivational posters and score improvement charts. Subjects grouped on left 
+third, ample open space on right for hero text. Warm professional lighting, 
+motivating and focused atmosphere. Premium educational environment. Rich color 
+palette with blue and warm tones. Ultra high definition.
+
+================================================================================
+FILE NAMING CONVENTION
+================================================================================
+
+Mobile (9:16) -> hero-[name]-mobile.webp
+Tablet (4:3)  -> hero-[name]-tablet.webp  
+Desktop (16:9) -> hero-[name]-desktop.webp
+
+All files go in: public/images/hero/
+
+================================================================================
+GENERATION NOTES
+================================================================================
+
+1. Use the SAME visual theme/style across all 3 device versions of each slide
+2. Ensure the 3 versions are recognizable as the same concept/concept
+3. For AI generators (Midjourney, DALL-E, etc.), add aspect ratio flags:
+   - Midjourney: --ar 9:16 (mobile), --ar 4:3 (tablet), --ar 16:9 (desktop)
+   - DALL-E: specify dimensions in prompt
+4. Output as WebP format, quality 85%
+5. Keep file sizes under 200KB each for fast loading
+6. The existing portrait images (Study abroad.webp, etc.) at 1024x1536 can be
+   used as reference for the mobile versions

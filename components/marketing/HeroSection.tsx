@@ -4,66 +4,17 @@ import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
-// Optimization Note for User:
-// By using local paths (e.g., '/1.jpeg'), Vercel automatically serves these through its Global Edge Network (CDN).
-// This handles 1000+ concurrent users effortlessly because the "server" doesn't send the file;
-// a server closest to the user (e.g., Mumbai, London, NY) sends it.
-// This is the fastest and most scalable way to host static assets.
-
-const SLIDES = [
-    {
-        id: 1,
-        image: '/1.jpeg',
-        title: "Best Consultancy for",
-        highlight: "Abroad Studies",
-        desc: "Pinnacle Nepal guides you to top universities in USA, UK, Canada, and Australia."
-    },
-    {
-        id: 2,
-        image: '/2.jpeg',
-        title: "Achieve Your Dream",
-        highlight: "With 98% Success",
-        desc: "Our expert counselors ensure your visa application is flawless and successful."
-    },
-    {
-        id: 3,
-        image: '/3.jpeg',
-        title: "Global Opportunities",
-        highlight: "Wait For You",
-        desc: "Connect with world-class institutions and secure your future career today."
-    },
-    {
-        id: 4,
-        image: '/4.jpeg',
-        title: "Test Preparation",
-        highlight: "Classes Available",
-        desc: "IELTS, PTE, and SAT preparation with experienced instructors and proven results."
-    },
-    { id: 5, image: '/5.jpeg', title: "Excellence in", highlight: "Education", desc: "Join thousands of successful students who trusted Pinnacle Nepal." },
-    { id: 6, image: '/6.jpeg', title: "Your Gateway to", highlight: "The World", desc: "We provide comprehensive support from application to departure." },
-    { id: 7, image: '/7.jpeg', title: "Start Your", highlight: "Journey", desc: "Personalized guidance for every step of your study abroad experience." },
-    { id: 8, image: '/8.jpeg', title: "Quality", highlight: "Service", desc: "Dedicated team committed to your academic and professional goals." },
-    { id: 10, image: '/10.jpeg', title: "Unlock Your", highlight: "Potential", desc: "Discover scholarships and financial aid options tailored for you." },
-    { id: 14, image: '/14.jpeg', title: "Trusted", highlight: "Partner", desc: "Building bridges to international education for over a decade." },
-    { id: 20, image: '/20.jpeg', title: "Prepare for", highlight: "Success", desc: "Comprehensive pre-departure briefings and post-arrival support." },
-    { id: 24, image: '/24.jpeg', title: "Welcome to", highlight: "Pinnacle", desc: "Your future begins here. Apply now for the upcoming intake." },
-];
+const SLIDES = [{
+    id: 0,
+    title: "Welcome to Pinnacle Nepal",
+    highlight: "Your Gateway to Global Education",
+    desc: "Pinnacle Nepal guides you to top universities in USA, UK, Canada, and Australia."
+}];
 
 export default function HeroSection() {
     const [current, setCurrent] = useState(0);
-
-    // Auto-rotate images every 5 seconds
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % SLIDES.length);
-        }, 5000);
-        return () => clearInterval(timer);
-    }, []);
-
     const activeSlide = SLIDES[current];
-    const nextSlide = SLIDES[(current + 1) % SLIDES.length];
 
     // Text Animation Variants
     const textVariants = {
@@ -74,45 +25,9 @@ export default function HeroSection() {
 
     return (
         <section className="relative h-screen min-h-[600px] flex items-end justify-start overflow-hidden bg-slate-900 pb-24">
-            {/* 
-                PERFORMANCE TRICK: Preload the NEXT image.
-                We render it invisibly so the browser downloads it NOW.
-                When the slide changes in 3s, it's already in the cache -> Instant Swap.
-            */}
-            <div className="absolute opacity-0 pointer-events-none w-1 h-1 overflow-hidden">
-                <Image
-                    src={nextSlide.image}
-                    alt="Preload"
-                    width={1920}
-                    height={1080}
-                    priority={true}
-                    quality={75} // Lower quality for preload to verify connection, reliable cache priming
-                />
-            </div>
-
-            {/* Background Image Slider */}
-            <AnimatePresence mode="popLayout">
-                <motion.div
-                    key={activeSlide.id}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1.2, ease: "easeInOut" }}
-                    className="absolute inset-0 z-0"
-                >
-                    <Image
-                        src={activeSlide.image}
-                        alt="Hero Background"
-                        fill
-                        className="object-cover opacity-100"
-                        priority={true} // Always priority for the hero background
-                        quality={90} // 90 is excellent quality but ~40% smaller than 100
-                        sizes="100vw"
-                    />
-                    {/* Clean Gradient overlay */}
-                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
-                </motion.div>
-            </AnimatePresence>
+            {/* Gradient background */}
+            <div className="absolute inset-0 bg-linear-to-br from-blue-900 via-blue-800 to-blue-900" />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
 
             <div className="container relative z-20 px-6">
                 <div className="max-w-3xl">
@@ -158,26 +73,6 @@ export default function HeroSection() {
                         </motion.div>
                     </AnimatePresence>
                 </div>
-            </div>
-
-            {/* Slide Indicators */}
-            <div className="absolute bottom-10 right-10 flex gap-2 z-20">
-                {SLIDES.map((_, idx) => (
-                    <button
-                        key={idx}
-                        onClick={() => setCurrent(idx)}
-                        className={`transition-all duration-300 p-2 ${idx === current
-                            ? "bg-white/30"
-                            : "bg-transparent"
-                            } rounded-full min-w-[48px] min-h-[48px] flex items-center justify-center`}
-                        aria-label={`Go to slide ${idx + 1}`}
-                    >
-                        <span className={`block ${idx === current
-                            ? "bg-white w-6 h-2"
-                            : "bg-white/50 hover:bg-white/80 w-2 h-2"
-                            } rounded-full transition-all`} />
-                    </button>
-                ))}
             </div>
 
             {/* Decorative Bottom Bar */}

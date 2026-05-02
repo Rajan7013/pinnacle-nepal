@@ -56,8 +56,10 @@ export default function ContactPage() {
                                 </div>
                                 <p className="font-bold text-blue-900 mb-2 text-lg">Visit Us</p>
                                 <p className="text-gray-700 text-sm font-medium">
-                                    New Baneshwor<br />
-                                    Kathmandu, Nepal
+                                    3rd floor, House no 1068<br />
+                                    Kusum Ganga Complex, Madan Bhandari Road<br />
+                                    New Baneshwor Chock, Kathmandu- Wada No 31<br />
+                                    Nepal
                                 </p>
                             </motion.div>
 

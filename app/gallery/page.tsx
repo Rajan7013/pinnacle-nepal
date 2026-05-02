@@ -8,12 +8,8 @@ import SectionWrapper, { SectionHeader } from "@/components/SectionWrapper";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import TalkToExpertButton from "@/components/TalkToExpertButton";
 
-// Generate array of 13 hero images
-const galleryImages = Array.from({ length: 13 }, (_, i) => ({
-    id: i + 1,
-    src: `/images/hero/hero-${i + 1}.jpg`,
-    alt: `Pinnacle Nepal Gallery Image ${i + 1}`
-}));
+// Gallery images removed – will be updated when new images are provided
+const galleryImages: { id: number; src: string; alt: string }[] = [];
 
 export default function GalleryPage() {
     return (
