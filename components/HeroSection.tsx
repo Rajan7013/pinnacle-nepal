@@ -52,18 +52,18 @@ export default function HeroSection() {
                 {/* Desktop ≥1024px: 16:9 image */}
                 <source
                   media="(min-width: 1024px)"
-                  srcSet={`/images/hero/laptop/${encodeImageName(slide.image)}.png`}
-                  type="image/png"
+                  srcSet={`/images/hero/laptop/${encodeImageName(slide.image)}.webp`}
+                  type="image/webp"
                 />
                 {/* Tablet 768-1023px: 5:3 image */}
                 <source
                   media="(min-width: 768px)"
-                  srcSet={`/images/hero/tablet/${encodeImageName(slide.image)}.png`}
-                  type="image/png"
+                  srcSet={`/images/hero/tablet/${encodeImageName(slide.image)}.webp`}
+                  type="image/webp"
                 />
                 {/* Mobile <768px: 10:7 image */}
                 <img
-                  src={`/images/hero/mobile/${encodeImageName(slide.image)}.png`}
+                  src={`/images/hero/mobile/${encodeImageName(slide.image)}.webp`}
                   alt={slide.title}
                   className="w-full h-auto block"
                 />
