@@ -142,6 +142,7 @@ export default function AboutPage() {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
                                     +977 9863481519
+                                </a>
                                 <span className="hidden sm:inline text-white/50">|</span>
                             </div>
                         </motion.div>
@@ -363,23 +364,23 @@ export default function AboutPage() {
                                     <h4 className="font-black text-lg text-[#003893] mb-4">Career Highlights</h4>
                                     <ul className="space-y-3">
                                         <li className="flex items-start gap-3">
-                                            <HiCheckCircle className="text-green-500 text-xl flex-shrink-0 mt-1" />
+                                            <HiCheckCircle className="text-green-500 text-xl shrink-0 mt-1" />
                                             <span className="text-gray-700 text-sm md:text-base"><strong>2026:</strong> CEO of Pinnacle Nepal</span>
                                         </li>
                                         <li className="flex items-start gap-3">
-                                            <HiCheckCircle className="text-green-500 text-xl flex-shrink-0 mt-1" />
+                                            <HiCheckCircle className="text-green-500 text-xl shrink-0 mt-1" />
                                             <span className="text-gray-700 text-sm md:text-base"><strong>Apr 2022 - 2025:</strong> Senior Associate International Student Affairs, SVCET Official</span>
                                         </li>
                                         <li className="flex items-start gap-3">
-                                            <HiCheckCircle className="text-green-500 text-xl flex-shrink-0 mt-1" />
+                                            <HiCheckCircle className="text-green-500 text-xl shrink-0 mt-1" />
                                             <span className="text-gray-700 text-sm md:text-base"><strong>Apr 2017 - Apr 2022:</strong> International Relations Manager, Mohan Babu University, Tirupati</span>
                                         </li>
                                         <li className="flex items-start gap-3">
-                                            <HiCheckCircle className="text-green-500 text-xl flex-shrink-0 mt-1" />
+                                            <HiCheckCircle className="text-green-500 text-xl shrink-0 mt-1" />
                                             <span className="text-gray-700 text-sm md:text-base"><strong>May 2016 - Apr 2017:</strong> Assistant Product Manager, Johnson & Johnson</span>
                                         </li>
                                         <li className="flex items-start gap-3">
-                                            <HiGlobeAlt className="text-blue-500 text-xl flex-shrink-0 mt-1" />
+                                            <HiGlobeAlt className="text-blue-500 text-xl shrink-0 mt-1" />
                                             <span className="text-gray-700 text-sm md:text-base">Visited 40+ countries across Asia, Africa, and Middle East</span>
                                         </li>
                                     </ul>
