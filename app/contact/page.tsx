@@ -74,8 +74,7 @@ export default function ContactPage() {
                                 </div>
                                 <h3 className="font-bold text-purple-900 mb-2">Call Us</h3>
                                 <div className="text-gray-700 text-sm font-medium">
-                                    <a href="tel:+9779852062628" className="block hover:text-purple-800 transition-colors">+977 9852062628</a>
-                                    <a href="tel:+9779814362628" className="block hover:text-purple-800 transition-colors">+977 9814362628</a>
+                                    <a href="tel:+9779863481519" className="block hover:text-purple-800 transition-colors">+977 9863481519</a>
                                 </div>
                             </motion.div>
 

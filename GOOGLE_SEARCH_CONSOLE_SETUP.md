@@ -91,7 +91,7 @@ Kathmandu, 44600
 Nepal
 ```
 
-**Phone:** +977 9852062628
+**Phone:** +977 9863481519
 
 **Website:** https://www.pinnaclenepal.org
 
@@ -169,7 +169,7 @@ After verification:
 
 If you need assistance:
 - **Email:** rajanprasaila@gmail.com
-- **Phone:** +977 9852062628
+- **Phone:** +977 9863481519
 
 ---
 

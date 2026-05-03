@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Pinnacle Nepal - Top Educational Consultancy in Kathmandu | Study Abroad",
     template: "%s | Pinnacle Nepal"
   },
-  description: "Leading educational consultancy in Nepal. Expert guidance for studying MBBS, Engineering abroad in India, Russia, China, Bangladesh. Free consultation. Contact: +977 9852062628",
+  description: "Leading educational consultancy in Nepal. Expert guidance for studying MBBS, Engineering abroad in India, Russia, China, Bangladesh. Free consultation. Contact: +977 9863481519",
   keywords: [
     "Pinnacle Nepal",
     "educational consultancy Nepal",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     url: "https://www.pinnaclenepal.org",
     siteName: "Pinnacle Nepal",
     title: "Pinnacle Nepal - Top Educational Consultancy in Kathmandu",
-    description: "Leading educational consultancy in Nepal. Expert guidance for studying MBBS, Engineering abroad. Free consultation. Contact: +977 9852062628",
+    description: "Leading educational consultancy in Nepal. Expert guidance for studying MBBS, Engineering abroad. Free consultation. Contact: +977 9863481519",
     images: [
       {
         url: "https://www.pinnaclenepal.org/logo.jpg",
@@ -132,7 +132,7 @@ export default function RootLayout({
                 "latitude": "27.6915",
                 "longitude": "85.3240"
               },
-              "telephone": ["+977-9852062628", "+977-9814362628"],
+              "telephone": ["+977-9863481519"],
               "email": "contact@pinnaclenepal.org",
               "openingHoursSpecification": [
                 {
@@ -163,7 +163,7 @@ export default function RootLayout({
               "image": "https://www.pinnaclenepal.org/logo.jpg",
               "@id": "https://www.pinnaclenepal.org",
               "url": "https://www.pinnaclenepal.org",
-              "telephone": "+977-9852062628",
+              "telephone": "+977-9863481519",
               "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",

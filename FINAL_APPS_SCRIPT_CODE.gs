@@ -145,8 +145,7 @@ function sendWelcomeEmail(userData) {
                                     📞 Need Immediate Assistance?
                                 </h3>
                                 <p style="color: #555555; font-size: 14px; line-height: 1.6; margin: 0;">
-                                    <strong>Phone:</strong> <a href="tel:+9779852062628" style="color: #0052CC; text-decoration: none;">+977 9852062628</a>, 
-                                    <a href="tel:+9779814362628" style="color: #0052CC; text-decoration: none;">+977 9814362628</a><br>
+                                    <strong>Phone:</strong> <a href="tel:+9779863481519" style="color: #0052CC; text-decoration: none;">+977 9863481519</a><br>
                                     <strong>Email:</strong> <a href="mailto:contact@pinnaclenepal.org" style="color: #0052CC; text-decoration: none;">contact@pinnaclenepal.org</a><br>
                                     <strong>Office:</strong> New Baneshwor, Kathmandu, Nepal<br>
                                     <strong>Hours:</strong> Sunday-Friday, 9:00 AM - 6:00 PM
@@ -190,8 +189,7 @@ function sendWelcomeEmail(userData) {
                                                 <td width="50%" style="vertical-align: top;">
                                                     <p style="margin: 0 0 8px 0; color: #555555; font-size: 13px;">
                                                         <strong style="color: #003893;">📞 Phone:</strong><br>
-                                                        +977 9852062628<br>
-                                                        +977 9814362628
+                                                        +977 9863481519
                                                     </p>
                                                 </td>
                                             </tr>
@@ -337,7 +335,7 @@ function sendTeamNotification(userData) {
                                         <strong style="color: #003893;">📍 Address:</strong> New Baneshwor, Kathmandu, Nepal
                                     </td>
                                     <td width="50%" style="font-size: 12px; color: #555;">
-                                        <strong style="color: #003893;">📞 Phone:</strong> +977 9852062628, +977 9814362628
+                                        <strong style="color: #003893;">📞 Phone:</strong> +977 9863481519
                                     </td>
                                 </tr>
                                 <tr>

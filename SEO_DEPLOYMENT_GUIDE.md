@@ -110,7 +110,7 @@ git push origin main
    - Name: Pinnacle Nepal
    - Category: Educational Consultant
    - Address: New Baneshwor, Kathmandu, Nepal
-   - Phone: +977 9852062628
+   - Phone: +977 9863481519
    - Website: https://www.pinnaclenepal.org
 3. **Verify business** (postcard or phone)
 4. **Add photos** of your office

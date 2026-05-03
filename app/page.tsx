@@ -77,8 +77,7 @@ export default function HomePage() {
                   <h3 className="text-xl font-bold mb-4 text-blue-900">Contact Info</h3>
                   <p className="text-gray-600 mb-2">
                     <span className="font-semibold text-blue-800 block">Phone:</span>
-                    <a href="tel:+9779852062628" className="hover:text-blue-600 transition-colors block">+977 9852062628</a>
-                    <a href="tel:+9779814362628" className="hover:text-blue-600 transition-colors block">+977 9814362628</a>
+                    <a href="tel:+9779863481519" className="hover:text-blue-600 transition-colors block">+977 9863481519</a>
                   </p>
                   <p className="text-gray-600">
                     <span className="font-semibold text-blue-800 block">Email:</span>
@@ -152,7 +151,7 @@ export default function HomePage() {
                 "name": "Where is Pinnacle Nepal located?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Pinnacle Nepal is located in New Baneshwor, Kathmandu, Nepal. We are open Sunday to Friday from 9:00 AM to 6:00 PM. Contact us at +977-9852062628 or +977-9814362628."
+                  "text": "Pinnacle Nepal is located in New Baneshwor, Kathmandu, Nepal. We are open Sunday to Friday from 9:00 AM to 6:00 PM. Contact us at +977-9863481519."
                 }
               }
             ]

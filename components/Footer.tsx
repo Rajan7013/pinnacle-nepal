@@ -135,8 +135,7 @@ export default function Footer() {
                             <li className="flex items-start gap-3 text-gray-300">
                                 <HiPhone className="text-blue-400 text-xl shrink-0 mt-1" />
                                 <div>
-                                    <a href="tel:+9779852062628" className="hover:text-white transition-colors block">+977 9852062628</a>
-                                    <a href="tel:+9779814362628" className="hover:text-white transition-colors block">+977 9814362628</a>
+                                    <a href="tel:+9779863481519" className="hover:text-white transition-colors block">+977 9863481519</a>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3 text-gray-300">
@@ -159,7 +158,7 @@ export default function Footer() {
                 >
                     <p className="text-gray-400">
                         © {currentYear} <span className="font-semibold text-white">Pinnacle Nepal</span>.
-                        All rights reserved. | Designed with ❤️ for your success
+                        All rights reserved.
                     </p>
                 </motion.div>
             </div>

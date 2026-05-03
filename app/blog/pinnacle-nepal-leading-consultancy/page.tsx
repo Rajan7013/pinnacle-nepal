@@ -311,11 +311,8 @@ export default function PinnacleNepalArticle() {
                                     </p>
 
                                     <h3 className="text-xl font-semibold text-gray-900 mb-2 mt-6">Call Us</h3>
-                                    <p className="text-gray-700 mb-1">
-                                        +977 9852062628
-                                    </p>
                                     <p className="text-gray-700 mb-4">
-                                        +977 9814362628
+                                        +977 9863481519
                                     </p>
 
                                     <h3 className="text-xl font-semibold text-gray-900 mb-2 mt-6">Email Us</h3>

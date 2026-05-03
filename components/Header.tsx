@@ -11,8 +11,6 @@ import {
     HiGlobeAlt,
     HiBriefcase,
     HiAcademicCap,
-    HiPhotograph,
-    HiInformationCircle,
     HiMail,
     HiNewspaper
 } from "react-icons/hi";
@@ -25,7 +23,7 @@ const navLinks = [
     { name: "Destinations", href: "/destinations", icon: HiGlobeAlt },
     { name: "Services", href: "/services", icon: HiBriefcase },
     { name: "Programs", href: "/programs", icon: HiAcademicCap },
-    { name: "Gallery", href: "/gallery", icon: HiPhotograph },
+    // { name: "Gallery", href: "/gallery", icon: HiPhotograph },
     // { name: "About Us", href: "/about", icon: HiInformationCircle },
     { name: "Contact", href: "/contact", icon: HiMail },
     { name: "Blog", href: "/blog", icon: HiNewspaper },
